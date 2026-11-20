@@ -1,0 +1,10 @@
+pyserial
+cryptography
+paho-mqtt
+easygui
+colorama
+pywin32
+openpyxl
+pandas
+psycopg2-binary
+boto3
