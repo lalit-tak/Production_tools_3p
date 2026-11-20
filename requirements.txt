@@ -1,0 +1,21 @@
+# Production Tool Bench - 3-Phase Single UI (Python 3.12, Windows)
+PyQt5
+pyserial
+cryptography
+pandas
+openpyxl
+xlrd
+psutil
+psycopg2-binary
+boto3
+botocore
+colorama
+cbor2
+paho-mqtt
+easygui
+pywin32; sys_platform == "win32"
+PyYAHDLC
+
+# Not on PyPI under a known name - install separately (used by scripts/rtt/wirepas_provisioning.py):
+#   gp_node  (Wirepas gateway / NetworkAPI library)
+# Standard-library modules (tkinter, json, hashlib, ...) need no installation.
