@@ -1,0 +1,96 @@
+"""
+Implements the packet reader of Maxwell board. This utility
+should be used when an FTDI cable is attached to the Rx/Tx
+lines of the Maxwell board, and a laptop is being used
+to read the packets sent by the Maxwell board.
+
+The run() method is the entry point of the maxwell-packet-monitor
+
+The parser is implemented as a state machine; the parser can
+be in three possible state:
+    1. STATE_IDLE: when the parser is waiting to receive a start byte (0xAA)
+    2. STATE_IN_PROGRESS: when the parser has received 0xAA and is waiting to\
+            receive a total of 58 bytes (including the start byte)
+    3. STATE_RECEIVED: when the parser has received 58 bytes (including start byte)\
+            and when it has been verified that the CRC of the incoming \
+            packet is consistent
+"""
+import argparse
+import serial
+# from colorama import Fore
+from .aes_decript import ParsePacket
+from .event_push_packet import EventPushPacket
+from .periodic_push_packet import PeriodicPushPacket
+import paho.mqtt.client as paho
+import datetime
+import time
+
+
+# Define event callbacks
+def on_connect(client, mosq, obj, rc):
+    print("rc: ", rc)
+
+
+def on_message(mosq, obj, msg):
+    timestamp = datetime.datetime.now()
+    print("\n\n", timestamp)
+    print("topic: ",msg.topic)
+    print("qos: ",msg.qos)
+    print("Len : ", len(bytearray(msg.payload)))
+    print((msg.payload))
+    # print [hex(x) for x in bytearray(msg.payload)]
+    stream = bytearray(msg.payload)
+
+    if (len(bytearray(msg.payload)) == 128):
+        prdcPkt = PeriodicPushPacket()
+        print("\n")
+        print("PERIODIC PUSH")
+        data = ParsePacket(stream)
+        prdcPkt.deserialize(data)
+        print(prdcPkt)
+    elif (len(bytearray(msg.payload)) == 97):
+        evtPkt = EventPushPacket()
+        print("\n")
+        print("EVENT PUSH")
+        data = ParsePacket(stream)
+        evtPkt.deserialize(data)
+        print(evtPkt)
+
+def on_subscribe(mosq, obj, mid, granted_qos):
+    print("Subscribed: ", mid, " ", granted_qos)
+
+def run():
+
+    print("starting push Listner..")
+    while True:
+        try:
+            mqttc = paho.Client()
+            # Assign event callbacks
+            mqttc.on_message = on_message
+            mqttc.on_connect = on_connect
+            mqttc.on_subscribe = on_subscribe
+            # Connect
+            print("connect to username: gpbroker and pass: grampower4321@")
+            mqttc.username_pw_set('gpbroker', 'grampower4321@')
+            print("connecting....")
+            mqttc.connect('broker.grampower.com', '1883')
+            # Start subscribe, with QoS level 0
+            print("Subscribe to : gpgprsDLMSPush, gpgprsTAPPush") #meters"
+            mqttc.subscribe([("ipcl/gpgprsDLMSPush", 1),("ipcl/gpgprsTAPPush", 1)])
+            # print "Subscribe to : ipcl/vdcuCollectionTPWM" #meters"
+            # mqttc.subscribe("ipcl/vdcuCollectionTPWM", 1)
+            # mqttc.subscribe("DataCollectionNeoway/pub", 1) #DataPushingSPTPWM  DataCollectionSPTPWM DataEventsSPTPWM
+            print("waiting....")
+            # Continue the network loop, exit when an error occurs
+            rc = 0
+            while rc == 0:
+                rc = mqttc.loop()
+            print("rc: ", rc)
+        except Exception as err:
+            print(str(err))
+            pass
+        time.sleep(30)
+
+
+if __name__ == "__main__":
+    run()

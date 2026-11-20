@@ -1,0 +1,18 @@
+DLMS to TAP
+Command sent to meter
+Command sent to dongle!
+get_time
+0 try
+2017-05-02 00:00:41
+ok
+get_time
+0 try
+get_time
+1 try
+get_time
+2 try
+get_time
+3 try
+get_time
+4 try
+time set

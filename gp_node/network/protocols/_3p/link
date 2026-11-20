@@ -1,0 +1,21 @@
+Command:Address:length:Payload :crc  - Write
+Command:Address:length               - Read
+Command:SectorAddress:				 - Erase
+Command:Block ID					 - Erase Block
+
+112 168 bytes of CODE memory 
+7 463 bytes of DATA memory (+ 304 absolute ) 
+17 490 bytes of CONST memory (+ 4 absolute ) 
+Errors: none Warnings: 8 
+
+111 742 bytes of CODE memory 
+7 463 bytes of DATA memory (+ 304 absolute ) 
+17 396 bytes of CONST memory (+ 4 absolute ) 
+
+111 718 bytes of CODE memory 
+7 463 bytes of DATA memory (+ 304 absolute ) 
+17 396 bytes of CONST memory (+ 4 absolute ) 
+Errors: none Warnings: 8 
+
+
+

@@ -1,0 +1,350 @@
+import os
+import os.path
+import time
+import serial
+import datetime
+import inspect
+
+class HW_WatchdogError(Exception):
+    """
+    NO_FUNCTION_FOUND: Thrown by the handle_function method when no function by the given name is found
+    MODEM_RESET: Thrown when command execution fails on Modem reset request
+    GATEWAY_RESET: Thrown when command execution fails on Gateway reset request
+    HARD_RESET: Thrown when command execution fails on Hard reset request request
+    CONFIG_HARD: Thrown when command execution fails on config Hard reset request
+    REFRESH_HARD: Thrown when command execution fails on refresh Hard reset request
+    """
+    NO_FUNCTION_FOUND = 1
+    MODEM_RESET = 2
+    GATEWAY_RESET = 3
+    HARD_RESET = 4
+    CONFIG_HARD = 5
+    REFRESH_HARD = 6
+    
+    def __init__(self, error_code, protocol_error=None, msg=""):
+        """
+        :param protocol_error: valid only when an underlying protocol (ex: Simpleterm) fails.
+        """
+        self.error_code = error_code
+        self.msg = msg
+        self.protocol_error = protocol_error
+        
+    def __str__(self):
+        if self.error_code == self.protocol_error:
+            return str(self.protocol_error)
+        else:
+            return self.msg
+
+class HW_Watchdog:
+    
+    def __init__(self, ser, log_file):
+        """
+        Init function for the HW_Watchdog class and its API's 
+        :param: ser = has object of the serial port.
+        :param: log_file = has object of the opened log file.
+        """
+        self.ser = ser
+        self.modem_counter = 0
+        self.out = ''
+        self.start_date=datetime.datetime.now().date()##start date
+        # flush the serial buffer
+        while self.ser.inWaiting() > 0:
+            self.out += self.ser.read(1)
+        self.out = ''
+
+        self.log_file = log_file
+        command_functions = inspect.getmembers(self)
+        self.function_list = []
+        for entry in command_functions:
+            if inspect.ismethod(entry[1]) and entry[0][0] != "_":
+                if entry[0] != 'handle_function_request':
+                    self.function_list.append(entry)
+        
+    def handle_function_request(self, request, timeout):
+        """
+        Parses the request and calls a member function corresponding to the request
+        and parsed function shall have one parameter as an input.
+        :param: request = request string
+        :param: timeout = parameter for timeout delay.
+        """
+        function_found = False
+        for f in self.function_list:
+                if f[0] == request:
+                    function_found = True
+                    result = str(f[1](timeout))
+                    try:
+                        return  result
+                    except AttributeError:
+                        self.log_file.write('\n'+str(datetime.datetime.now().time()) +'>> '+ result)
+                        return result
+        if function_found is False:
+            self.log_file.write('\n'+str(datetime.datetime.now().time()) +'>> '+ 'no such function')        
+            raise HW_WatchdogError(error_code=HW_WatchdogError.NO_FUNCTION_FOUND, msg="no such function")
+    
+    def modem_reset(self, timeout):
+        """
+        Function for doing a modem reset with a given timeout delay
+        :param: timeout = parameter for timeout delay.
+        """
+        #assert(timeout,int)
+        # flush the serial buffer
+        while self.ser.inWaiting() > 0:
+            self.out += self.ser.read(1)
+        self.out = ''
+        
+        self.ser.write('MODEM__OFF')
+        time.sleep(1)
+        while self.ser.inWaiting() > 0:
+            self.out += self.ser.read(1)
+        if self.out != '':
+            self.log_file.write('\n'+str(datetime.datetime.now().time()) +">> " + self.out)
+            if self.out != 'MODEM__OFF':
+                raise HW_WatchdogError(error_code=HW_WatchdogError.MODEM_RESET, msg="problem with Modem Reset ")
+            self.out = ''
+
+        time.sleep(timeout)
+        
+        self.ser.write('MODEM___ON')
+        time.sleep(1)
+        while self.ser.inWaiting() > 0:
+            self.out += self.ser.read(1)
+        if self.out != '':
+            self.log_file.write('\n'+str(datetime.datetime.now().time()) +">> " + self.out)
+            if self.out != 'MODEM___ON':
+                raise HW_WatchdogError(error_code=HW_WatchdogError.MODEM_RESET, msg="problem with Modem Reset ")
+            self.out = ''
+        
+    def gateway_reset(self, timeout):
+        """
+        Function for doing a gateway reset with a given timeout delay
+        :param: timeout = parameter for timeout delay.
+        """
+        #assert(timeout,int)
+        # flush the serial buffer
+        while self.ser.inWaiting() > 0:
+            self.out += self.ser.read(1)
+        self.out = ''
+        
+        self.ser.write('Gateway_Of')
+        time.sleep(1)
+        while self.ser.inWaiting() > 0:
+            self.out += self.ser.read(1)
+        if self.out != '':
+            self.log_file.write('\n'+str(datetime.datetime.now().time()) +">> " + self.out)
+            if self.out != 'Gateway_Of':
+                raise HW_WatchdogError(error_code=HW_WatchdogError.GATEWAY_RESET, msg="problem with Gateway Reset ")
+            self.out = ''
+
+        time.sleep(timeout)
+        
+        self.ser.write('Gateway_On')
+        time.sleep(1)
+        while self.ser.inWaiting() > 0:
+            self.out += self.ser.read(1)
+        if self.out != '':
+            self.log_file.write('\n'+str(datetime.datetime.now().time()) +">> " + self.out)
+            if self.out != 'Gateway_On':
+                raise HW_WatchdogError(error_code=HW_WatchdogError.GATEWAY_RESET, msg="problem with Gateway Reset ")
+            self.out = ''
+        
+    def hard_reset(self, timeout):
+        """
+        Function for doing a hard reset with a given timeout delay
+        :param: timeout = parameter for timeout delay.
+        """
+        #assert(timeout,int)
+        # flush the serial buffer
+        while self.ser.inWaiting() > 0:
+            self.out += self.ser.read(1)
+        self.out = ''
+        
+        self.ser.write('Trn_DCU_Of')
+        time.sleep(1)
+        while self.ser.inWaiting() > 0:
+            self.out += self.ser.read(1)
+        if self.out != '':
+            self.log_file.write('\n'+str(datetime.datetime.now().time()) +">> " + self.out)
+            if self.out != 'Trn_DCU_Of':
+                raise HW_WatchdogError(error_code=HW_WatchdogError.HARD_RESET, msg="problem with Hard Reset ")
+            self.out = ''
+
+        time.sleep(timeout)
+        
+       # self.ser.write('__POWER_ON')
+        #time.sleep(1)
+       # while self.ser.inWaiting() > 0:
+        #    self.out += self.ser.read(1)
+       # if self.out != '':
+        #    self.log_file.write('\n'+str(datetime.datetime.now().time()) +">> " + self.out)
+        #    if self.out != '__POWER_ON':
+         #       raise HW_WatchdogError(error_code=HW_WatchdogError.HARD_RESET, msg="problem with Hard Reset ")
+          #  self.out = ''
+    
+    def config_hard_reset_timeout(self, timeout, retries):
+        """
+        Function for config an internal timeout in the board for refreshing watchdog.
+        :param: timeout = parameter for timeout delay.
+        """
+        # flush the serial buffer
+        #assert(timeout,int)
+        while self.ser.inWaiting() > 0:
+            self.out += self.ser.read(1)
+        self.out = ''
+        
+        if timeout > 180 and timeout < 600:
+            command = 'CONF-'+str(timeout).rjust(5,'0')
+            self.ser.write(command)
+            time.sleep(1)
+            while self.ser.inWaiting() > 0:
+                self.out += self.ser.read(1)
+            if (self.out != command) and (retries != 0):
+                self.config_hard_reset_timeout(timeout,retries-1)
+                self.log_file.write('\n'+str(datetime.datetime.now().time()) +">> " + self.out)
+                self.out = ''
+            
+            time.sleep(1)
+            
+            while self.ser.inWaiting() > 0:
+                self.out += self.ser.read(1)
+            if self.out != '':
+                self.log_file.write('\n'+str(datetime.datetime.now().time()) +">> " + self.out)
+                self.out = ''
+                if (self.out != 'TIMEOUT CONFIGURED') and (retries != 0):
+                    self.config_hard_reset_timeout(timeout,retries-1)
+                    self.log_file.write('\n'+str(datetime.datetime.now().time()) +'>> '+ 'config timeout parameter not configured')        
+                    raise HW_WatchdogError(error_code=HW_WatchdogError.CONFIG_HARD, msg="config timeout parameter not configured")
+        else:
+            self.log_file.write('\n'+str(datetime.datetime.now().time()) +'>> '+ 'config timeout parameter should be in between 180-600 seconds')        
+            raise HW_WatchdogError(error_code=HW_WatchdogError.CONFIG_HARD, msg="config timeout parameter should be in between 180-600 seconds")
+    
+    def init_hardware(self):
+	"""
+	Function for initalizing he hardware
+	"""
+       # self.ser.write('__POWER_ON')
+       # time.sleep(1)
+       # while self.ser.inWaiting() > 0:
+       #     self.out += self.ser.read(1)
+       # if self.out != '':
+       #     self.log_file.write('\n'+str(datetime.datetime.now().time()) +">> " + self.out)
+       #     if self.out != '__POWER_ON':
+       #         raise HW_WatchdogError(error_code=HW_WatchdogError.HARD_RESET, msg="problem with Hard Reset ")
+       #     self.out = ''
+
+        self.ser.write('MODEM___ON')
+        time.sleep(1)
+        while self.ser.inWaiting() > 0:
+            self.out += self.ser.read(1)
+        if self.out != '':
+            self.log_file.write('\n'+str(datetime.datetime.now().time()) +">> " + self.out)
+            if self.out != 'MODEM___ON':
+                raise HW_WatchdogError(error_code=HW_WatchdogError.MODEM_RESET, msg="problem with Modem Reset ")
+            self.out = ''        
+        self.ser.write('Gateway_On')
+        time.sleep(1)
+        while self.ser.inWaiting() > 0:
+            self.out += self.ser.read(1)
+        if self.out != '':
+            self.log_file.write('\n'+str(datetime.datetime.now().time()) +">> " + self.out)
+            if self.out != 'Gateway_On':
+                raise HW_WatchdogError(error_code=HW_WatchdogError.GATEWAY_RESET, msg="problem with Gateway Reset ")
+            self.out = ''
+            
+    def kick_reset(self,timeout):
+        """
+        Function for refreshing watchdog.
+        :param: timeout = parameter for timeout delay.
+        """
+        self.current_date=datetime.datetime.now().date()
+        if self.current_date!=self.start_date:
+            file_path = log_path + "/" + str(datetime.datetime.now().date()) + ".log"
+	    print "new file created" 
+            unbuffered = 0
+            self.log_file = open(file_path,"a",unbuffered)
+            print "log_file ",self.log_file
+            self.start_date=self.current_date
+
+        #assert(timeout,int)
+        # flush the serial buffer
+        while self.ser.inWaiting() > 0:
+            self.out += self.ser.read(1)
+        self.out = ''
+        
+        self.ser.write('KICK_RESET')
+        time.sleep(timeout)
+
+        while self.ser.inWaiting() > 0:
+            self.out += self.ser.read(1)
+        if self.out != '':
+            self.log_file.write('\n'+str(datetime.datetime.now().time()) +">> " + self.out)
+            if self.out != 'KICK_RESET':
+                raise HW_WatchdogError(error_code=HW_WatchdogError.REFRESH_HARD, msg="problem with Refresh Watchdog ")
+            self.out = ''
+    
+    def flush_serial(self):
+        """
+        Function for serial flush if there is any garbage character coming from board.
+        """
+        output = []
+        while self.ser.inWaiting() > 0:
+            output += self.ser.read(1)
+    
+    def execute(self):
+        flag = False
+        while(1):
+            self.ser.write('Trn_DCU_Of')
+            while self.ser.inWaiting() > 0:
+                self.out += self.ser.read(1)
+            if self.out != '':
+                print "\n>> " + self.out
+                self.out = ''
+            time.sleep(1)
+            f = os.popen('ifconfig ppp100 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1')
+            ip=f.read()
+            if ip == '':    
+                self.modem_counter = self.modem_counter + 1
+                flag = False
+                if self.modem_counter == 10:
+                    self.modem_counter = 0
+                    self.ser.write('MODEM__OFF')
+                    while self.ser.inWaiting() > 0:
+                        self.out += self.ser.read(1)
+                    if self.out != '':
+                        print "\n>> " + self.out 
+                        self.out = ''
+                    time.sleep(9)
+                    self.ser.write('MODEM___ON')
+                    while self.ser.inWaiting() > 0:
+                        self.out += self.ser.read(1)
+                    if self.out != '':
+                        print "\n>> " + self.out 
+                        self.out = ''
+            else:
+                if flag == False:
+                    print str(datetime.datetime.now())+' internet already configured with ip address '+ip
+                    self.modem_counter = 0
+                    flag = True
+            time.sleep(1)
+	    self.ser.write('Gateway_Of')
+       	    time.sleep(1)
+            while self.ser.inWaiting() > 0:
+               self.out += self.ser.read(1)
+            if self.out != '':
+  	       print "\n>> "+self.out
+               self.out = ''
+            time.sleep(10)      
+            self.ser.write('Gateway_On')
+            time.sleep(1)
+            while self.ser.inWaiting() > 0:
+               self.out += self.ser.read(1)
+            if self.out != '':
+               print "\n>> "+self.out
+               self.out = ''
+		
+            
+#def run():
+#    exec_command = HW_Watchdog()
+#    exec_command.execute()
+    
+#if __name__ == "__main__":
+#    run()

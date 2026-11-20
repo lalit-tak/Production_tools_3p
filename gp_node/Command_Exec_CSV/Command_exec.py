@@ -1,0 +1,111 @@
+import csv
+import time
+import serial
+import sys
+import copy
+
+from gp_node.network.network_api import NetworkAPI, NetworkAPIError
+from gp_node.utils.address import Address
+
+# configurable parameters. for serial port, CSV files and gateway
+class string_store():
+    gateway_path = '/dev/gp-gateway'
+    baudrate = '19200'
+    gateway_timeout = 3
+    csv_input_path = '../../gp_node/Command_Exec_CSV/input.csv'
+    csv_output_path = '../../gp_node/Command_Exec_CSV/output.csv'
+    mode = 'rc_packet'
+    max_try = 5
+
+# Class Command exec for executing the commands
+class CommandExec:
+    def __init__(self):
+        self.get_commands_csv(string_store.csv_input_path)
+        self.command_length = len(self.command)
+        self.result = copy.deepcopy(self.command)
+        print('Opening gateway communication port')
+        try:
+            self.ser = serial.Serial(string_store.gateway_path, string_store.baudrate, timeout=int(string_store.gateway_timeout))
+        except (serial.serialutil.SerialException, OSError):
+            print('Could not open gateway device, exiting')
+            sys.exit()
+        self.network_api = NetworkAPI(self.ser, string_store.mode)
+        
+    def get_commands_csv(self, csv_input_path):
+        self.command = []
+        self.flag = []
+        try:
+            with open(csv_input_path,'rb') as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                     self.command.append(row)
+        except Exception as e:
+            print(type(e))
+            print('problem with input csv file')
+            sys.exit()
+        
+        for i in range(len(self.command)):
+            self.flag.append('false')
+            
+    def write_commands_csv(self, csv_output_path):
+        fields_names = ['Meter Address']
+        arr = len(self.result[0])
+        for i in range(arr-1):
+            i = i + 1
+            fields_names.append('Command '+str(i))
+        
+        print(self.command)
+        print(self.result)
+        with open(csv_output_path,'wb') as f:
+            writer = csv.DictWriter(f, fieldnames=fields_names,restval='None',extrasaction='ignore')
+            writer.writeheader()
+            for i in range(self.command_length):
+                writer.writerow(self.result[i])
+                    
+    def command_exec_csv(self):
+        for try_count in range(string_store.max_try):
+            index = 0
+            for index in range(self.command_length):
+                if self.flag[index] == 'false':
+                    self.flag[index] = 'true'
+                                            
+                    arr = len(self.command[index])
+                    try:
+                        self.address = Address(self.command[index]['Meter Address'])
+                    except Exception as e:
+                        print('Could not get Meter Address')
+                        sys.exit()
+                    print(self.address)
+                    
+                    i = 0
+                    for i in range(arr-1):
+                        try:
+                            i = i + 1
+                            self.command[index]['Command '+str(i)]
+                            try:   
+                                response = self.network_api.handle_function_request(self.address, self.command[index]['Command '+str(i)])
+                            except NetworkAPIError as e:
+                                print(NetworkAPIError)
+                                print("error in API " + self.command[index]['Command '+str(i)])
+                                self.result[index]['Command '+str(i)] = 'fail'
+                                self.flag[index] = 'false'
+                            else:
+                                print(self.command[index]['Command '+str(i)] + ' ' + response)
+                                self.result[index]['Command '+str(i)] =  response
+                                
+                            time.sleep(1)
+                        except Exception as e:
+                            print('Could not get data from Comamnd '+ str(i))
+                            sys.exit()
+                        
+                index = index + 1
+            try_count = try_count + 1
+                
+def run():
+    exec_command = CommandExec()
+    exec_command.command_exec_csv()
+    exec_command.write_commands_csv(string_store.csv_output_path)
+
+if __name__ == "__main__":
+    run()
+

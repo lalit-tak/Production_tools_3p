@@ -1,0 +1,209 @@
+import serial
+import time
+import datetime
+import csv
+from optparse import OptionParser
+from gp_node.utils import Address
+
+
+
+
+class tracePath(object):
+	def __init__(self,serial_port):
+		self.serial = serial_port
+		self.timeout = ser.timeout
+		self.serial.close()
+		self.serial.open()
+		self.serial.flushInput()
+		self.serial.flushOutput()
+		self.bytes_received = bytearray()
+
+	def get_path(self, address="0.0.0.0", no_of_retries=3):
+		retries = 0
+		while retries < no_of_retries:
+			self.send_trace_path_request(address)
+			time.sleep(0.5)
+			if self.get_trace_path_response():
+				return self.bytes_received
+			else:
+				retries += 1
+		return False
+
+	def send_trace_path_request(self, address):
+		METER_NUMBER = 0x01
+		addr = Address(address)
+		addr_int = addr.dump_to_integer()
+		bytes_to_be_sent = bytearray()
+		bytes_to_be_sent.extend(chr(0x0A))#start character
+		#bytes_to_be_sent.extend(chr((addr_int & 0xFF000000) >> 24))#address byte 1
+		#bytes_to_be_sent.extend(chr((addr_int & 0x00FF0000) >> 16))#address byte 2
+		#bytes_to_be_sent.extend(chr((addr_int & 0x0000FF00) >> 8))#address byte 3
+		#bytes_to_be_sent.extend(chr((addr_int & 0x000000FF) >> 0))#address byte 4
+		bytes_to_be_sent.extend(chr((addr_int & 0x000000FF) >> 0))#address byte 4
+		bytes_to_be_sent.extend(chr((addr_int & 0x0000FF00) >> 8))#address byte 3
+		bytes_to_be_sent.extend(chr((addr_int & 0x00FF0000) >> 16))#address byte 2
+		bytes_to_be_sent.extend(chr((addr_int & 0xFF000000) >> 24))#address byte 1
+		bytes_to_be_sent.extend(chr(1))#command number
+		bytes_to_be_sent.extend(chr(0x03))#packet type
+		bytes_to_be_sent.extend(chr(0x16))#command argument - get packet path
+		bytes_to_be_sent.extend(chr(0x00))#Dont care
+		bytes_to_be_sent.extend(chr(0x00))#Dont care
+		for byte in bytes_to_be_sent:
+			ser.write(chr(byte))
+
+	def get_trace_path_response(self):
+		self.bytes_received = bytearray()
+		timeout = False
+		start_time = time.time()
+		while timeout == False:
+			byte = ser.read()
+			self.bytes_received.extend(byte)
+			if (len(self.bytes_received) >= 12):
+				byte_length = (self.bytes_received[11] * 5) + 18
+				if len(self.bytes_received) == byte_length:
+					break
+			if ((time.time() - start_time) > self.timeout):
+				print "timeout"
+				timeout = True
+		return not timeout
+
+
+class tracePathLog(object):
+
+	def __init__(self, file_path):
+		self.f = open(file_path,"w")
+		self.csv_writer = csv.writer(self.f)
+		self.csv_writer.writerow(self.get_header())
+
+	def get_header(self):
+		header = ("time","start character","system ID","origin-id","origin rssi (dBm)","origin-network-level",\
+				"hop counter","message counter","latency counter","packet type",\
+				"reciever ID-1","RSSI jump 1 (dBm)",\
+				"reciever ID-2","RSSI jump 2 (dBm)",\
+				"reciever ID-3","RSSI jump 3 (dBm)",\
+				"reciever ID-4","RSSI jump 4 (dBm)",\
+				"reciever ID-5","RSSI jump 5 (dBm)",\
+				"reciever ID-6","RSSI jump 6 (dBm)",\
+				"reciever ID-7","RSSI jump 7 (dBm)",\
+				"reciever ID-8","RSSI jump 8 (dBm)",\
+				"reciever ID-9","RSSI jump 9 (dBm)",\
+				"reciever ID-10","RSSI jump 10 (dBm)",\
+				"reciever ID-11","RSSI jump 11 (dBm)",\
+				"reciever ID-12","RSSI jump 12 (dBm)",\
+				"reciever ID-13","RSSI jump 13 (dBm)",\
+				"reciever ID-14","RSSI jump 14 (dBm)",\
+				"reciever ID-15","RSSI jump 15 (dBm)",\
+				"reciever ID-16","RSSI jump 16 (dBm)",\
+				"reciever ID-17","RSSI jump 17 (dBm)",\
+				"reciever ID-18","RSSI jump 18 (dBm)",\
+				"reciever ID-19","RSSI jump 19 (dBm)",\
+				"reciever ID-20","RSSI jump 20 (dBm)",\
+				"reciever ID-21","RSSI jump 21 (dBm)",\
+				"reciever ID-22","RSSI jump 22 (dBm)",\
+				"reciever ID-23","RSSI jump 23 (dBm)",\
+				"reciever ID-24","RSSI jump 24 (dBm)")
+		return header
+
+	def put_failure_message(self, address):
+		log = []
+		log.append(str(datetime.datetime.now().time()))
+		log.append("failed")
+		log.append("failed")
+		log.append(address)
+		for i in range(22):
+			log.append("failed")
+		self.csv_writer.writerow(log)
+
+	def put_log(self, data):
+		if not isinstance(data,bytearray):
+			raise Exception
+		START_CHARACTER_POS = 0
+		SYSTEM_ID_POS = 1
+		ORIGIN_ID_POS = 5
+		ORIGIN_RSSI_POS = 9
+		ORIGIN_NETWORK_LVL_POS = 10
+		HOP_COUNTER_POS = 11
+		MESSAGE_CNT_POS = 12
+		LATENCY_CNT_POS = 14
+		PKT_TYPE_POS = 16
+
+		log = []
+		start_character = data[START_CHARACTER_POS]
+		system_id = data[SYSTEM_ID_POS]
+		
+		addr = Address()
+		addr.load_from_integer((data[ORIGIN_ID_POS]<<0) + (data[ORIGIN_ID_POS+1]<<8)
+								+ (data[ORIGIN_ID_POS+2]<<16) + (data[ORIGIN_ID_POS+3]<<24))
+		origin_id = str(addr)
+		origin_rssi = data[ORIGIN_RSSI_POS]/-2.0
+		origin_network_level = data[ORIGIN_NETWORK_LVL_POS]
+		hop_counter = data[HOP_COUNTER_POS]
+		message_counter = (data[MESSAGE_CNT_POS]<<8) + (data[MESSAGE_CNT_POS+1])
+		latency_counter = (data[LATENCY_CNT_POS]<<8) + data[LATENCY_CNT_POS+1]
+		packet_type = data[PKT_TYPE_POS]
+
+		log.append(str(datetime.datetime.now().time()))
+		log.append(start_character)
+		log.append(system_id)
+		log.append(origin_id)
+		log.append(origin_rssi)
+		log.append(origin_network_level)
+		log.append(hop_counter)
+		log.append(message_counter)
+		log.append(latency_counter)
+		log.append(packet_type)
+
+		for i in range(data[11]):
+			address = str(data[22 + (i*5)]) + "." + str(data[21 + (i*5)])\
+				+ "." + str(data[20 + (i*5)]) + "." + str(data[19 + (i*5)])
+			log.append(address)
+			log.append(str(data[18 + (i*5)]/-2.0))   #RSSI
+
+		for i in range((24-data[11])*2):
+			log.append("NA")
+
+		self.csv_writer.writerow(log)
+
+
+if __name__ == "__main__":
+	parser = OptionParser()
+	parser.add_option("-d", "--device", dest="device",help="gateway device file")
+	parser.add_option("-t", "--timeout", dest="timeout", help="uart timeout")
+	parser.add_option("-b", "--baud_rate", dest="baud_rate", help="baud rate")
+	parser.add_option("-n", "--no_of_retries", dest="no_of_retries",\
+	 			help="retries for retrieval")
+	parser.add_option("-a", "--address_file", dest="address_file", help= \
+			"file containing the address of meters whose path needs to be retrieved")
+	parser.add_option("-l", "--log_file", dest="log_file", help="location of log file")
+	(options, args) = parser.parse_args()
+	if options.device is None:
+	    options.device = "/dev/gp-gateway"
+	if options.baud_rate is None:
+	    options.baud_rate = 38400
+	if options.timeout is None:
+	    options.timeout = 3
+	if options.no_of_retries is None:
+		options.no_of_retries = 3
+	if options.address_file is None:
+		options.address_file = '/home/anay/junk/rf_log/test2.txt'
+	if options.log_file is None:
+		options.log_file = '/home/anay/junk/rf_log/test1.txt'
+
+	try:
+		ser = serial.Serial(options.device, int(options.baud_rate), 
+			timeout=int(options.timeout))
+	except (serial.serialutil.SerialException, OSError) as err:
+		print(err)
+
+	trace = tracePath(ser)
+	net_log = tracePathLog(options.log_file)
+	with open(options.address_file) as f:
+		address_list = f.readlines()
+
+	for address in address_list:
+		print "Retrieving path for :",address
+		result = trace.get_path(address, int(options.no_of_retries))
+		if result:
+			net_log.put_log(result)
+		else:
+			net_log.put_failure_message(address)

@@ -1,0 +1,104 @@
+"""
+Definition of the MaxwellPacket class, used for communication between the
+Maxwell meter and the Node.
+"""
+
+import gp_node.utils.serialize as serialize
+from esw_flag import ESW_FLAGS
+# from colorama import Fore
+import datetime
+import calendar
+import binascii
+from dateutil import parser
+
+class DeserializeError(Exception):
+    def __str__(self):
+        return "Could not deserialize packet."
+
+
+class SerializeError(Exception):
+    def __str__(self):
+        return "Could not serialize packet."
+
+class EventPushPacket:
+
+
+    def __init__(self):
+        self.Time = 0
+        self.DeviceID = 0
+        self.PushSetup = 0
+        self.ESW = bytearray(16)
+        self.ESW_STR = []
+
+
+    def __str__(self):
+        output = ""
+        output += "Time     : " + binascii.hexlify(self.Time) + " <> " + self.string1 +"\n"
+        output += "DeviceID : " + binascii.hexlify(self.DeviceID) + " <> " + self.DeviceID +"\n"
+        output += "PushSetup: " + binascii.hexlify(self.PushSetup) +"\n"
+        output += "ESW      : " + binascii.hexlify(self.ESW) +"\n"
+        output += "ESW_STR  : " + self.STR + "\n"
+        return output
+
+        # output = ""
+        # output += Fore.GREEN + "Time     : " + Fore.WHITE + binascii.hexlify(self.Time) +"\n"
+        # output += Fore.GREEN + "DeviceID : " + Fore.WHITE + binascii.hexlify(self.DeviceID) + "--" + Fore.BLUE + self.DeviceID +"\n"
+        # output += Fore.GREEN + "PushSetup: " + Fore.WHITE + binascii.hexlify(self.PushSetup) +"\n"
+        # output += Fore.GREEN + "ESW      : " + Fore.WHITE + binascii.hexlify(self.ESW) +"\n"
+        # output += Fore.GREEN + "ESW_STR  : " + Fore.RED +  self.STR + Fore.WHITE +"\n"
+        # return output
+
+    def timeformat(self,buf):
+        a=buf.encode("hex")
+        # print "ddddddddddd",a
+        year=int(   a[0:4],16)
+        month=int(a[4:6],16)
+        date=int(a[6:8],16)
+        day=int(a[8:10],16)
+        hour=int(a[10:12],16)
+        minute=int(a[12:14],16)
+        second=int(a[14:16],16)
+        today = datetime.datetime(int(year),int(month),int(date))
+        # print "dfhss",today,type(today)
+        day=calendar.day_name[today.weekday()]
+        # print day
+
+
+        self.string1=str(str(year)+"-"+str(month)+"-"+str(date)+" "+str(day)+" "+str(hour)+":"+str(minute)+":"+str(second))
+        # print self.string1
+
+    def deserialize(self, buf):
+        """
+        Deserialzes buf. Note that if the time field in the buf entry is
+        not a valid timestamp (ie, timestamp cannot be converted into a
+        valid datetime.datetime value), then the self.time is defaulted to
+        datetime.datetime(1970, 1, 1, 0, 0, 0)
+
+        :param buf: should be a 58 byte bytearray
+        :type buf: bytearray
+        """
+        try:
+            self.DeviceID = buf[22:22+10]
+            self.PushSetup = buf[34:34+6]
+            self.Time = buf[42:42+12]
+            self.time1=self.timeformat(self.Time)
+            self.ESW = buf[57:]
+            # print "dddddddd",self.ESW
+            self.STR = ''
+
+            self.ESW_STR = []
+            for i in range(0,16):
+                for k in range(0,9):
+                    temp = ord(self.ESW[i])
+                    if(temp&(1<<(8-k))):
+                        # print i*8+k,ESW_NAMES[i*8+k]
+                        Indx = i*8+k
+                        # print "Byte,Pos:",i,k,Indx
+                        self.ESW_STR.append(ESW_FLAGS[Indx-1])
+                        # print esw_flags
+            for byte in self.ESW_STR:
+                self.STR = self.STR + byte+','
+
+        except serialize.DeserializeValueError:
+            raise DeserializeError
+

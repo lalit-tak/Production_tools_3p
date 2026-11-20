@@ -1,0 +1,261 @@
+import datetime
+import gp_node.utils.serialize as serialize
+import time
+from gp_node.utils.serialize import deserialize_int16
+from gp_node.utils.serialize import deserialize_int32
+from gp_node.utils.serialize import deserialize_uint32
+from gp_node.utils import TamperFlag
+
+class  DCUBundlePacket(object):
+
+    def __init__(self):
+        """
+        The constructor instantiates a default dictionary to store the ecop data
+        """
+        dt = datetime.datetime(1970, 1, 1)
+        self.return_params = {"date_time":dt,
+                "meter_type ":0,
+                "voltage":0.00,"phase_current":0.000,"neutral_current":0.00,
+                "avg_pf":0.00,"cumm_total_real_energy":0.000,"cumm_total_apparent_energy":0.000,
+                "cumm_total_reactive_energy":0.00,"total_real_power":0.000,"total_apparent_power": 0.000,
+                "reactive_power":0.00,"avg_frequency":0,"credits_left":0.00,
+                "live_tamper_flags":[],"exist_tamper_flags":[],"current_events":0.00,"power_events":0.00,
+                "others_events":0.00,"reserved":0,"data_valid":0.00,"kw_md_flag":0,"kva_md_flag":0}
+
+    def __str__(self):
+        """
+        Prints out the stored information in the dictionary.
+        Useful along with print statements.
+        ex: print EcopDataStreamPacket()
+        :param :none
+        :return :none
+        """
+        return ("Packt Type                    : {}\n"
+                "date & time                   : {}\n"
+                "Phase Voltage                 : {} V\n"
+                "Phase Current                 : {} A\n"
+                "Neutral current               : {}\n"
+                "Avg Pf                        : {}\n"
+                "Cumm Total Active Energy      : {} WH\n"
+                "Cumm Apparent Energy          : {} VAh\n"
+                "Cumm Reactive Energy          : {} VArh\n"
+                "Active Power                  : {} W\n"
+                "Apparent Power                : {} VA\n"   
+                "Reactive Power                : {} VAr\n"
+                "Frequency                     : {} Hz\n"
+                "Credits Left                  : {} credits\n"
+                "Live Tampers                  : {}\n"
+                "No Of Current Releated Events : {}\n"
+                "No Of Power Releated Events   : {}\n"
+                "No Of Others Releated Events  : {}\n"
+                "Reserved Bits                 : {}\n"
+                "Data Valid                    : {}\n"
+                "Active MD Change Flag         : {}\n"
+                "Apparent MD Change Flag       : {}")\
+                .format(self.return_params["meter_type"],
+                        self.return_params["date_time"],
+                        self.return_params["voltage"],
+                        self.return_params["phase_current"],
+                        self.return_params["neutral_current"],
+                        self.return_params["avg_pf"],
+                        self.return_params["cumm_total_real_energy"],
+                        self.return_params["cumm_total_apparent_energy"],
+                        self.return_params["cumm_total_reactive_energy"],
+                        self.return_params["total_real_power"],
+                        self.return_params["total_apparent_power"],
+                        self.return_params["reactive_power"],
+                        self.return_params["avg_frequency"],
+                        self.return_params["credits_left"],
+                        self.return_params["live_tamper_flags"],
+                        self.return_params["current_events"],
+                        self.return_params["power_events"],
+                        self.return_params["others_events"],
+                        self.return_params["reserved"],
+                        self.return_params["data_valid"],
+                        self.return_params["kw_md_flag"],
+                        self.return_params["kva_md_flag"])
+
+    def deserialize_packet_bundle(self,payload):
+        """
+        Deserializes the input payload and populates the data to the default
+        dictionary.This API needs to be used to retrieve information from the 
+        reply bytestream.
+        :param payload:input bytestream
+        :return :none
+        """
+        bytes = bytearray()
+        bytes = payload
+        #print "length of payload",len(payload)
+        self.return_params["meter_type"] = bytes[0] 
+        dt = datetime.datetime(1970, 1, 1) +\
+                datetime.timedelta(seconds=((bytes[1]<<24) +\
+                    (bytes[2]<<16) + (bytes[3]<<8) + bytes[4]))
+        self.return_params["date_time"] = dt
+        self.return_params["voltage"] =  ((bytes[5]<<8) + bytes[6])/100.0
+        self.return_params["phase_current"] =  (serialize.deserialize_int24(bytes[7:10]))/100.0
+        self.return_params["neutral_current"] =  (serialize.deserialize_int24(bytes[10:13]))/100.0
+        self.return_params["avg_pf"] = (serialize.deserialize_int16(bytes[13:15]))/1000.0 
+        self.return_params["cumm_total_real_energy"] = ((bytes[15]<<24) +(bytes[16]<<16) + (bytes[17]<<8) + bytes[18])/1.0
+        self.return_params["cumm_total_apparent_energy"] = ((bytes[19]<<24) +(bytes[20]<<16) + (bytes[21]<<8) + bytes[22])/1.0
+        self.return_params["cumm_total_reactive_energy"] = ((bytes[23]<<24) +(bytes[24]<<16) + (bytes[25]<<8) + bytes[26])/1.0
+        self.return_params["total_real_power"] = ((bytes[27]<<24) +(bytes[28]<<16) + (bytes[29]<<8) + bytes[30])/1000.0
+        self.return_params["total_apparent_power"] =  ((bytes[31]<<24) +(bytes[32]<<16) + (bytes[33]<<8) + bytes[34])/1000.0
+        self.return_params["reactive_power"] =  ((bytes[35]<<24) +(bytes[36]<<16) + (bytes[37]<<8) + bytes[38])/1000.0
+        self.return_params["avg_frequency"] = ((bytes[39]<<8) + bytes[40])/10.0
+        self.return_params["credits_left"] =  ((bytes[41]<<24) +(bytes[42]<<16) + (bytes[43]<<8) + bytes[44])
+
+
+        instant_tamper_tmp = bytes[45] 
+        self.tamper_events = []
+        if instant_tamper_tmp >= 128:
+            raise ValueError("Bit 7 of flag_list was unexpectedly set.")
+            instant_tamper_tmp = instant_tamper_tmp - 128
+        if instant_tamper_tmp >= 64:
+            raise ValueError("Bit 6 of flag_list was unexpectedly set.")
+            instant_tamper_tmp = instant_tamper_tmp - 64
+        if instant_tamper_tmp >= 32:
+            self.tamper_events.append(TamperFlag("NEUTRAL_DISTURBANCE"))
+            instant_tamper_tmp = instant_tamper_tmp - 32
+        if instant_tamper_tmp >= 16:
+            self.tamper_events.append(TamperFlag("NEUTRAL_MISSING"))
+            instant_tamper_tmp = instant_tamper_tmp - 16
+        if instant_tamper_tmp >= 8:
+            self.tamper_events.append(TamperFlag("COVER_OPEN"))
+            instant_tamper_tmp = instant_tamper_tmp - 8
+        if instant_tamper_tmp >= 4:
+            self.tamper_events.append(TamperFlag("MAGNETIC"))
+            instant_tamper_tmp = instant_tamper_tmp - 4
+        if instant_tamper_tmp >= 2:
+            instant_tamper_tmp = instant_tamper_tmp & 0xFD
+        if instant_tamper_tmp >= 1:
+            self.tamper_events.append(TamperFlag("EARTH"))
+            instant_tamper_tmp = instant_tamper_tmp - 1
+        self.tamper_flags = self.tamper_events
+
+        self.return_params["live_tamper_flags"] =  self.tamper_flags
+
+        occured_tampered_tamp = ((bytes[46]<<8) + bytes[47])
+        #hex_tamper = hex(occured_tampered_tamp)
+        
+        current_releated = occured_tampered_tamp & 0xF000
+        current_releated = (current_releated >> 12) 
+
+        power_releated = occured_tampered_tamp & 0xF00
+        power_releated = (power_releated >> 8)
+
+        others_related = occured_tampered_tamp & 0x00F0
+        others_related = (others_related >> 4)
+
+        self.return_params["others_events"] = others_related
+        self.return_params["power_events"] = power_releated
+        self.return_params["current_events"] = current_releated
+
+        self.return_params["data_valid"] = bytes[48] & 0x01
+        
+        if(self.return_params["data_valid"]):
+            self.return_params["data_valid"] = "DATA_VALID"
+        else:
+            self.return_params["data_valid"] = "DATA_INVALID"
+        
+        active_flag  = bytes[48] & 0x02
+
+        if(active_flag):
+            self.return_params["kw_md_flag"] = 0x01
+        else:
+            self.return_params["kw_md_flag"] = 0x00
+
+        apparent_flag = bytes[48] & 0x04
+        if(apparent_flag):
+            self.return_params["kva_md_flag"]  = 0x01
+        else:
+            self.return_params["kva_md_flag"]  = 0x00
+
+    
+    def get_packet_bundle(self):
+        """
+        Prints out the stored information in the dictionary.
+        Useful along with print statements.
+        ex: print EcopDataStreamPacket()
+        :param :none
+        :return :none
+        """
+        return ("Packt Type                    : {}\n"
+                "date & time                   : {}\n"
+                "Phase Voltage                 : {} V\n"
+                "Phase Current                 : {} A\n"
+                "Neutral current               : {}\n"
+                "Avg Pf                        : {}\n"
+                "Cumm Total Active Energy      : {} WH\n"
+                "Cumm Apparent Energy          : {} VAh\n"
+                "Cumm Reactive Energy          : {} VArh\n"
+                "Active Power                  : {} W\n"
+                "Apparent Power                : {} VA\n"   
+                "Reactive Power                : {} VAr\n"
+                "Frequency                     : {} Hz\n"
+                "Credits Left                  : {} credits\n"
+                "Live Tampers                  : {}\n"
+                "No Of Current Releated Events : {}\n"
+                "No Of Power Releated Events   : {}\n"
+                "No Of Others Releated Events  : {}\n"
+                "Reserved Bits                 : {}\n"
+                "Data Valid                    : {}\n"
+                "Active MD Change Flag         : {}\n"
+                "Apparent MD Change Flag       : {}")\
+                .format(self.return_params["meter_type"],
+                        self.return_params["date_time"],
+                        self.return_params["voltage"],
+                        self.return_params["phase_current"],
+                        self.return_params["neutral_current"],
+                        self.return_params["avg_pf"],
+                        self.return_params["cumm_total_real_energy"],
+                        self.return_params["cumm_total_apparent_energy"],
+                        self.return_params["cumm_total_reactive_energy"],
+                        self.return_params["total_real_power"],
+                        self.return_params["total_apparent_power"],
+                        self.return_params["reactive_power"],
+                        self.return_params["avg_frequency"],
+                        self.return_params["credits_left"],
+                        self.return_params["live_tamper_flags"],
+                        self.return_params["current_events"],
+                        self.return_params["power_events"],
+                        self.return_params["others_events"],
+                        self.return_params["reserved"],
+                        self.return_params["data_valid"],
+                        self.return_params["kw_md_flag"],
+                        self.return_params["kva_md_flag"])
+
+
+    def get_packet_dictionary_bundle(self):
+        """
+        Prints out the stored information in the dictionary.
+        Useful along with print statements.
+        ex: print EcopDataStreamPacket()
+        :param :none
+        :return :none
+        """
+        _1p_bundle = {}
+        _1p_bundle['meter_type']                   =    self.return_params["meter_type"]
+        _1p_bundle['date_time']                    =    self.return_params["date_time"]
+        _1p_bundle['voltage']                      =    self.return_params["voltage"],
+        _1p_bundle['phase_current']                =    self.return_params["phase_current"]
+        _1p_bundle['neutral_current']              =    self.return_params["neutral_current"]
+        _1p_bundle['avg_pf']                       =    self.return_params["avg_pf"]
+        _1p_bundle['cumm_total_real_energy']       =    self.return_params["cumm_total_real_energy"]
+        _1p_bundle['cumm_total_apparent_energy']   =    self.return_params["cumm_total_apparent_energy"]
+        _1p_bundle['cumm_total_reactive_energy']   =    self.return_params["cumm_total_reactive_energy"]
+        _1p_bundle['total_real_power']             =    self.return_params["total_real_power"]
+        _1p_bundle['total_apparent_power']         =    self.return_params["total_apparent_power"]
+        _1p_bundle['reactive_power']               =    self.return_params["reactive_power"]
+        _1p_bundle['avg_frequency']                =    self.return_params["avg_frequency"]
+        _1p_bundle['credits_left']                 =    self.return_params["credits_left"]
+        _1p_bundle['live_tamper_flags']            =    self.return_params["live_tamper_flags"]
+        _1p_bundle['current_events']               =    self.return_params["current_events"]
+        _1p_bundle['power_events']                 =    self.return_params["power_events"]
+        _1p_bundle['others_events']                =    self.return_params["others_events"]
+        _1p_bundle['reserved']                     =    self.return_params["reserved"]
+        _1p_bundle['data_valid']                   =    self.return_params["data_valid"]
+        _1p_bundle['kw_md_flag']                   =    self.return_params["kw_md_flag"]
+        _1p_bundle['kva_md_flag']                  =    self.return_params["kva_md_flag"]
+
+        #print _1p_bundle
+        return _1p_bundle

@@ -1,0 +1,291 @@
+sameer@sameer-ThinkPad-E460:~/grampower/gp_node(fota_1p)$ sudo node-shell -d /dev/ttyUSB1 -b 9600 -m irda
+
+Gateway Device: /dev/ttyUSB1
+Baud Rate: 9600
+Time Out: 3
+
+node-shell [255.255.255.255] $ meter_dlms_to_tap
+Command sent to meter
+node-shell [255.255.255.255] $ meter_dlms_to_tap
+Command sent to meter
+node-shell [255.255.255.255] $ get_live_version
+
+SimpletermError
+error code: TAP_ERROR
+tap error:TIMEOUT_START_BYTE
+
+node-shell [255.255.255.255] $ maxwell_cal_time:now
+ok
+node-shell [255.255.255.255] $ meter_dlms_to_tap
+Command sent to meter
+node-shell [255.255.255.255] $ get_live_version
+
+
+SimpletermError
+error code: TAP_ERROR
+tap error:TIMEOUT_START_BYTE
+
+node-shell [255.255.255.255] $ maxwell_cal_time:now
+ok
+node-shell [255.255.255.255] $ meter_dlms_to_tap
+Command sent to meter
+node-shell [255.255.255.255] $ get_live_version
+
+
+SimpletermError
+error code: TAP_ERROR
+tap error:TIMEOUT_START_BYTE
+
+node-shell [255.255.255.255] $ maxwell_cal_time:now
+ok
+node-shell [255.255.255.255] $ get_time
+2017-08-20 19:50:35
+node-shell [255.255.255.255] $ get_live_version
+99
+node-shell [255.255.255.255] $ meter_dlms_to_tap
+Command sent to meter
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ get_live_version
+99
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ Traceback (most recent call last):
+  File "/usr/local/bin/node-shell", line 9, in <module>
+    load_entry_point('gp-node==41', 'console_scripts', 'node-shell')()
+  File "/usr/local/lib/python2.7/dist-packages/gp_node-41-py2.7.egg/gp_node/node_shell/node_shell.py", line 1956, in run
+    node_shell.cmdloop()
+  File "/usr/lib/python2.7/cmd.py", line 130, in cmdloop
+    line = raw_input(self.prompt)
+KeyboardInterrupt
+sameer@sameer-ThinkPad-E460:~/grampower/gp_node(fota_1p)$ ^C
+sameer@sameer-ThinkPad-E460:~/grampower/gp_node(fota_1p)$ clear
+[3;J
+sameer@sameer-ThinkPad-E460:~/grampower/gp_node(fota_1p)$ sudo node-shell -d /dev/ttyUSB1 -b 9600 -m irda
+
+Gateway Device: /dev/ttyUSB1
+Baud Rate: 9600
+Time Out: 3
+
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ factory_init_1
+ok
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ reset
+ok
+node-shell [255.255.255.255] $ meter_dlms_to_tap
+Command sent to meter
+35:00shell [255.255.255.255] $ maxwell_cal_time:2017-09-30 19: 
+
+
+MaxwellBridgeError
+error code: TAP_ERROR
+tap error:TIMEOUT_START_BYTE
+
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+35:00shell [255.255.255.255] $ maxwell_cal_time:2017-09-30 19:3
+ok
+node-shell [255.255.255.255] $ get_time
+2017-09-30 19:35:19
+node-shell [255.255.255.255] $ get_billing_timestamp
+2017-09-01 00:00:00
+node-shell [255.255.255.255] $ get_1p_metering_data
+voltage: 244.5 V
+current: 0.0 A
+active_power: 1.0 W
+power_factor: 1.0
+frequency: 50.1
+active_energy: 9020.0 Wh
+reactive_energy: 0.0 VArh
+apparent_energy: 9110.0 VAh
+factory_init_time: 2017-08-20 19:52:59
+node-shell [255.255.255.255] $ get_accounting_state
+slab_info : 
+no_of_slabs : 6
+slab_price : [100, 200, 300, 400, 500, 600] paisa
+slab_limits : [1, 2, 3, 4, 5] KWh
+Monthly Minimum Charges : 0 Paisa
+
+enabled_slab : 0 
+enabled_slab_set : 1
+slab disabled
+node-shell [255.255.255.255] $ get_second metyer
+*** Unknown syntax: get_second metyer
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ meter_dlms_to_tap
+Command sent to meter
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ get_live_version
+
+SimpletermError
+error code: TAP_ERROR
+tap error:TIMEOUT_START_BYTE
+
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ get_live_version
+99
+node-shell [255.255.255.255] $ factory_init_1
+ok
+node-shell [255.255.255.255] $ reset
+ok
+node-shell [255.255.255.255] $ meter_dlms_to_tap
+Command sent to meter
+35:00shell [255.255.255.255] $ maxwell_cal_time:2017-09-30 19: 
+
+
+MaxwellBridgeError
+error code: TAP_ERROR
+tap error:TIMEOUT_START_BYTE
+
+node-shell [255.255.255.255] $ 
+35:00shell [255.255.255.255] $ maxwell_cal_time:2017-09-30 19:3
+ok
+node-shell [255.255.255.255] $ get_time
+2017-09-30 19:35:12
+node-shell [255.255.255.255] $ get_billing_timestamp
+2017-09-01 00:00:00
+node-shell [255.255.255.255] $ get_1p_metering_data
+voltage: 244.6 V
+current: 0.0 A
+active_power: 2.0 W
+power_factor: 1.0
+frequency: 50.1
+active_energy: 7040.0 Wh
+reactive_energy: 0.0 VArh
+apparent_energy: 7040.0 VAh
+factory_init_time: 2017-08-20 19:57:15
+node-shell [255.255.255.255] $ get_accounting_state
+slab_info : 
+no_of_slabs : 6
+slab_price : [100, 200, 300, 400, 500, 600] paisa
+slab_limits : [1, 2, 3, 4, 5] KWh
+Monthly Minimum Charges : 0 Paisa
+
+enabled_slab : 0 
+enabled_slab_set : 1
+slab disabled
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 3rd meter
+*** Unknown syntax: 3rd meter
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ meter_dlms_to_tap
+Command sent to meter
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ get_live_version
+99
+node-shell [255.255.255.255] $ maxwell_cal_time:now
+ok
+node-shell [255.255.255.255] $ factory_init_1
+ok
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ reset
+ok
+node-shell [255.255.255.255] $ meter_dlms_to_tap
+Command sent to meter
+35:00shell [255.255.255.255] $ maxwell_cal_time:2017-09-30 19: 
+ok
+node-shell [255.255.255.255] $ get_time
+2017-09-30 19:35:12
+node-shell [255.255.255.255] $ get_billing_timestamp
+2017-09-01 00:00:00
+node-shell [255.255.255.255] $ get_1p_metering_data
+voltage: 244.6 V
+current: 0.01 A
+active_power: 2.0 W
+power_factor: 1.0
+frequency: 50.1
+active_energy: 90300.0 Wh
+reactive_energy: 200.0 VArh
+apparent_energy: 90970.0 VAh
+factory_init_time: 2017-08-20 20:00:39
+node-shell [255.255.255.255] $ get_accounting_state
+slab_info : 
+no_of_slabs : 6
+slab_price : [100, 200, 300, 400, 500, 600] paisa
+slab_limits : [1, 2, 3, 4, 5] KWh
+Monthly Minimum Charges : 0 Paisa
+
+enabled_slab : 0 
+enabled_slab_set : 1
+slab disabled
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 4th meter
+*** Unknown syntax: 4th meter
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ meter_dlms_to_tap
+Command sent to meter
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ get_live_version
+99
+node-shell [255.255.255.255] $ maxwell_cal_time:now
+ok
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ factory_init_1
+ok
+node-shell [255.255.255.255] $ reset
+ok
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ 
+node-shell [255.255.255.255] $ meter_dlms_to_tap
+Command sent to meter
+35:00shell [255.255.255.255] $ maxwell_cal_time:2017-09-30 19: 
+ok
+node-shell [255.255.255.255] $ get_time
+2017-09-30 19:35:10
+node-shell [255.255.255.255] $ get_billing_timestamp
+2017-09-01 00:00:00
+node-shell [255.255.255.255] $ get_1p_metering_data
+voltage: 245.0 V
+current: 0.01 A
+active_power: 4.0 W
+power_factor: 1.0
+frequency: 50.1
+active_energy: 66730.0 Wh
+reactive_energy: 0.0 VArh
+apparent_energy: 68250.0 VAh
+factory_init_time: 2017-08-20 20:02:18
+node-shell [255.255.255.255] $ get_accounting_state
+slab_info : 
+no_of_slabs : 6
+slab_price : [100, 200, 300, 400, 500, 600] paisa
+slab_limits : [1, 2, 3, 4, 5] KWh
+Monthly Minimum Charges : 0 Paisa
+
+enabled_slab : 0 
+enabled_slab_set : 1
+slab disabled
+node-shell [255.255.255.255] $ 

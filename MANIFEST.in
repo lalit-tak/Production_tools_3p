@@ -1,0 +1,5 @@
+include gp_node/network/protocols/pickle/*
+include gp_node/network/protocols/*
+include gp_node/network/protocols/_1pn/*
+include gp_node/network/protocols/packets/_1pn/*
+include gp_node/network/*.json

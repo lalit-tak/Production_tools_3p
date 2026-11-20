@@ -1,0 +1,612 @@
+node-shell [37.3.13.64] $ get_prepaid_info
+Prepaid Mode                       : Enabled
+Prepaid Billing Type               : kWh
+Change Prepaid Mode Time Stamp     : 2021-11-15 00:08:26
+Account balance                    : -1492.4 Rs
+Energy at start of month           : 37.5 kWh
+Time Stamp Of Last Prepaid Billing : 2022-12-01 00:00:00
+New Tariff Activation Time Stamp   : 2022-01-30 00:25:41
+Next Tariff To Activate            : 1
+Activated Tariff Group Number      : EG Tariff
+Net Positive Recharge              : 0.0 Rs
+Net Negative Recharge              : 0.0 Rs
+Net Recharge                       : 0.0 Rs
+Current Account Balance            : -1492.4 Rs
+Current FD Cost                    : 0.0 Rs
+Current Energy Cost                : 0.0 Rs
+Status                             : ACC_NO_BALANCE_FRIENDLY_HOURS
+Current Positive Recharge          : 0.0 Rs
+Current Negative Recharge          : 0.0 Rs
+EG Consumption Charge              : 0.4 Rs
+DG Consumption Charge              : 0.0 Rs
+EG Energy Consumed                 : 0.02 kWh
+DG Energy Consumed                 : 0.0 kWh
+Current Net Recharge               : 0.0 Rs
+Cummulative EG FD Cost             : 612.0 Rs
+
+node-shell [37.3.13.64] $
+node-shell [37.3.13.64] $ get_tim
+get_time              get_time_left         get_time_since_unlock get_timeformat
+node-shell [37.3.13.64] $ get_time
+2022-12-01 00:10:16
+node-shell [37.3.13.64] $ set_ip_time:2023-12-01 00:10:16
+ok
+node-shell [37.3.13.64] $ get_prepaid_info
+Prepaid Mode                       : Enabled
+Prepaid Billing Type               : kWh
+Change Prepaid Mode Time Stamp     : 2021-11-15 00:08:26
+Account balance                    : -2572.4 Rs
+Energy at start of month           : 37.5 kWh
+Time Stamp Of Last Prepaid Billing : 2023-12-01 00:00:00
+New Tariff Activation Time Stamp   : 2022-01-30 00:25:41
+Next Tariff To Activate            : 1
+Activated Tariff Group Number      : EG Tariff
+Net Positive Recharge              : 0.0 Rs
+Net Negative Recharge              : 0.0 Rs
+Net Recharge                       : 0.0 Rs
+Current Account Balance            : -2572.4 Rs
+Current FD Cost                    : 0.0 Rs
+Current Energy Cost                : 0.0 Rs
+Status                             : ACC_NO_BALANCE_FRIENDLY_HOURS
+Current Positive Recharge          : 0.0 Rs
+Current Negative Recharge          : 0.0 Rs
+EG Consumption Charge              : 0.4 Rs
+DG Consumption Charge              : 0.0 Rs
+EG Energy Consumed                 : 0.02 kWh
+DG Energy Consumed                 : 0.0 kWh
+Current Net Recharge               : 0.0 Rs
+Cummulative EG FD Cost             : 732.0 Rs
+
+node-shell [37.3.13.64] $ set_ip_time:2033-12-01 00:10:16
+ok
+node-shell [37.3.13.64] $ get_time
+2033-12-01 00:10:16
+node-shell [37.3.13.64] $ get_3p_dcu_bundle
+Date & time                   : 2033-12-01 00:10:16
+Meter Serial Number           : 200000
+Prepaid Bill Type             : kWh
+Firmware version              : 9001
+Hardware version              : unknown
+R-Ph Avg Voltage              : 251.68 V
+Y-Ph Avg Voltage              : 251.7 V
+B-Ph Avg Voltage              : 251.7 V
+R-Ph Avg Current              : 0.07 A
+Y-Ph Avg Current              : 0.06 A
+B-Ph Avg Current              : 0.06 A
+Neutral Avg current           : 0.0 A
+R-Ph Avg PF                   : 0.99
+Y-Ph Avg PF                   : 0.99
+B-Ph Avg PF                   : 0.99
+Total Avg PF                  : 0.99
+Frequency                     : 50.02 Hz
+Active Power                  : 0.05 kW
+Apparent Power                : 0.05 kVA
+Reactive Power                : 0.0 kVAr
+Cumm Active Energy            : 37.5 kWh
+Cumm Apparent Energy          : 38.48 kVAh
+Cumm Reactive Energy          : 0.0 kVArh
+Tampers Count                 : 0
+Live Tampers                  : []
+No Of Current Related Events  : 0
+No Of Power Related Events    : 0
+No Of Others Related Events   : 0
+No Of Voltage Related Events  : 0
+Relay State                   : AUTO_CONTROL_ON
+Switch Off Reason             : NULL
+Activated Tariff Group        : EG Tariff Activated
+Prepaid Status                : Prepaid Activated
+Account Status                : ACC_NO_BALANCE_FRIENDLY_HOURS
+Credits Left                  : -1492.4 Rs
+Total Net Recharge            : 0.0 Rs
+Current Net Recharge          : 0.0 Rs
+DG Energy Consumed            : 0.0 kWh
+EG Energy Consumed            : 0.02 kWh
+DG Energy Deducted Amount     : 0.0 Rs
+EG Energy Deducted Amount     : 0.4 Rs
+Current Running Price         : 20.0 Rs
+Cummulative Total FD Cost     : 612.0 Rs
+node-shell [37.3.13.64] $ get_3p_dcu_bundle
+Date & time                   : 2033-12-01 00:10:16
+Meter Serial Number           : 200000
+Prepaid Bill Type             : kWh
+Firmware version              : 9001
+Hardware version              : unknown
+R-Ph Avg Voltage              : 251.68 V
+Y-Ph Avg Voltage              : 251.7 V
+B-Ph Avg Voltage              : 251.7 V
+R-Ph Avg Current              : 0.07 A
+Y-Ph Avg Current              : 0.06 A
+B-Ph Avg Current              : 0.06 A
+Neutral Avg current           : 0.0 A
+R-Ph Avg PF                   : 0.99
+Y-Ph Avg PF                   : 0.99
+B-Ph Avg PF                   : 0.99
+Total Avg PF                  : 0.99
+Frequency                     : 50.02 Hz
+Active Power                  : 0.05 kW
+Apparent Power                : 0.05 kVA
+Reactive Power                : 0.0 kVAr
+Cumm Active Energy            : 37.5 kWh
+Cumm Apparent Energy          : 38.48 kVAh
+Cumm Reactive Energy          : 0.0 kVArh
+Tampers Count                 : 0
+Live Tampers                  : []
+No Of Current Related Events  : 0
+No Of Power Related Events    : 0
+No Of Others Related Events   : 0
+No Of Voltage Related Events  : 0
+Relay State                   : AUTO_CONTROL_ON
+Switch Off Reason             : NULL
+Activated Tariff Group        : EG Tariff Activated
+Prepaid Status                : Prepaid Activated
+Account Status                : ACC_NO_BALANCE_FRIENDLY_HOURS
+Credits Left                  : -1492.4 Rs
+Total Net Recharge            : 0.0 Rs
+Current Net Recharge          : 0.0 Rs
+DG Energy Consumed            : 0.0 kWh
+EG Energy Consumed            : 0.02 kWh
+DG Energy Deducted Amount     : 0.0 Rs
+EG Energy Deducted Amount     : 0.4 Rs
+Current Running Price         : 20.0 Rs
+Cummulative Total FD Cost     : 612.0 Rs
+node-shell [37.3.13.64] $
+node-shell [37.3.13.64] $ get_3p_dcu_bundle
+Date & time                   : 2033-12-01 00:10:16
+Meter Serial Number           : 200000
+Prepaid Bill Type             : kWh
+Firmware version              : 9001
+Hardware version              : unknown
+R-Ph Avg Voltage              : 251.68 V
+Y-Ph Avg Voltage              : 251.7 V
+B-Ph Avg Voltage              : 251.7 V
+R-Ph Avg Current              : 0.07 A
+Y-Ph Avg Current              : 0.06 A
+B-Ph Avg Current              : 0.06 A
+Neutral Avg current           : 0.0 A
+R-Ph Avg PF                   : 0.99
+Y-Ph Avg PF                   : 0.99
+B-Ph Avg PF                   : 0.99
+Total Avg PF                  : 0.99
+Frequency                     : 50.02 Hz
+Active Power                  : 0.05 kW
+Apparent Power                : 0.05 kVA
+Reactive Power                : 0.0 kVAr
+Cumm Active Energy            : 37.5 kWh
+Cumm Apparent Energy          : 38.48 kVAh
+Cumm Reactive Energy          : 0.0 kVArh
+Tampers Count                 : 0
+Live Tampers                  : []
+No Of Current Related Events  : 0
+No Of Power Related Events    : 0
+No Of Others Related Events   : 0
+No Of Voltage Related Events  : 0
+Relay State                   : AUTO_CONTROL_ON
+Switch Off Reason             : NULL
+Activated Tariff Group        : EG Tariff Activated
+Prepaid Status                : Prepaid Activated
+Account Status                : ACC_NO_BALANCE_FRIENDLY_HOURS
+Credits Left                  : -1492.4 Rs
+Total Net Recharge            : 0.0 Rs
+Current Net Recharge          : 0.0 Rs
+DG Energy Consumed            : 0.0 kWh
+EG Energy Consumed            : 0.02 kWh
+DG Energy Deducted Amount     : 0.0 Rs
+EG Energy Deducted Amount     : 0.4 Rs
+Current Running Price         : 20.0 Rs
+Cummulative Total FD Cost     : 612.0 Rs
+node-shell [37.3.13.64] $ get_3p_dcu_bundle
+Date & time                   : 2033-12-01 00:10:16
+Meter Serial Number           : 200000
+Prepaid Bill Type             : kWh
+Firmware version              : 9001
+Hardware version              : unknown
+R-Ph Avg Voltage              : 251.68 V
+Y-Ph Avg Voltage              : 251.7 V
+B-Ph Avg Voltage              : 251.7 V
+R-Ph Avg Current              : 0.07 A
+Y-Ph Avg Current              : 0.06 A
+B-Ph Avg Current              : 0.06 A
+Neutral Avg current           : 0.0 A
+R-Ph Avg PF                   : 0.99
+Y-Ph Avg PF                   : 0.99
+B-Ph Avg PF                   : 0.99
+Total Avg PF                  : 0.99
+Frequency                     : 50.02 Hz
+Active Power                  : 0.05 kW
+Apparent Power                : 0.05 kVA
+Reactive Power                : 0.0 kVAr
+Cumm Active Energy            : 37.5 kWh
+Cumm Apparent Energy          : 38.48 kVAh
+Cumm Reactive Energy          : 0.0 kVArh
+Tampers Count                 : 0
+Live Tampers                  : []
+No Of Current Related Events  : 0
+No Of Power Related Events    : 0
+No Of Others Related Events   : 0
+No Of Voltage Related Events  : 0
+Relay State                   : AUTO_CONTROL_ON
+Switch Off Reason             : NULL
+Activated Tariff Group        : EG Tariff Activated
+Prepaid Status                : Prepaid Activated
+Account Status                : ACC_NO_BALANCE_FRIENDLY_HOURS
+Credits Left                  : -1492.4 Rs
+Total Net Recharge            : 0.0 Rs
+Current Net Recharge          : 0.0 Rs
+DG Energy Consumed            : 0.0 kWh
+EG Energy Consumed            : 0.02 kWh
+DG Energy Deducted Amount     : 0.0 Rs
+EG Energy Deducted Amount     : 0.4 Rs
+Current Running Price         : 20.0 Rs
+Cummulative Total FD Cost     : 612.0 Rs
+node-shell [37.3.13.64] $ get_time
+2033-12-01 00:10:16
+node-shell [37.3.13.64] $ get_time
+2033-12-01 00:10:16
+node-shell [37.3.13.64] $ get_prepaid_info
+Prepaid Mode                       : Enabled
+Prepaid Billing Type               : kWh
+Change Prepaid Mode Time Stamp     : 2021-11-15 00:08:26
+Account balance                    : -2572.4 Rs
+Energy at start of month           : 37.5 kWh
+Time Stamp Of Last Prepaid Billing : 2023-12-01 00:00:00
+New Tariff Activation Time Stamp   : 2022-01-30 00:25:41
+Next Tariff To Activate            : 1
+Activated Tariff Group Number      : EG Tariff
+Net Positive Recharge              : 0.0 Rs
+Net Negative Recharge              : 0.0 Rs
+Net Recharge                       : 0.0 Rs
+Current Account Balance            : -2572.4 Rs
+Current FD Cost                    : 0.0 Rs
+Current Energy Cost                : 0.0 Rs
+Status                             : ACC_NO_BALANCE_FRIENDLY_HOURS
+Current Positive Recharge          : 0.0 Rs
+Current Negative Recharge          : 0.0 Rs
+EG Consumption Charge              : 0.4 Rs
+DG Consumption Charge              : 0.0 Rs
+EG Energy Consumed                 : 0.02 kWh
+DG Energy Consumed                 : 0.0 kWh
+Current Net Recharge               : 0.0 Rs
+Cummulative EG FD Cost             : 732.0 Rs
+
+node-shell [37.3.13.64] $ get_prepaid_info
+Prepaid Mode                       : Enabled
+Prepaid Billing Type               : kWh
+Change Prepaid Mode Time Stamp     : 2021-11-15 00:08:26
+Account balance                    : -2572.4 Rs
+Energy at start of month           : 37.5 kWh
+Time Stamp Of Last Prepaid Billing : 2023-12-01 00:00:00
+New Tariff Activation Time Stamp   : 2022-01-30 00:25:41
+Next Tariff To Activate            : 1
+Activated Tariff Group Number      : EG Tariff
+Net Positive Recharge              : 0.0 Rs
+Net Negative Recharge              : 0.0 Rs
+Net Recharge                       : 0.0 Rs
+Current Account Balance            : -2572.4 Rs
+Current FD Cost                    : 0.0 Rs
+Current Energy Cost                : 0.0 Rs
+Status                             : ACC_NO_BALANCE_FRIENDLY_HOURS
+Current Positive Recharge          : 0.0 Rs
+Current Negative Recharge          : 0.0 Rs
+EG Consumption Charge              : 0.4 Rs
+DG Consumption Charge              : 0.0 Rs
+EG Energy Consumed                 : 0.02 kWh
+DG Energy Consumed                 : 0.0 kWh
+Current Net Recharge               : 0.0 Rs
+Cummulative EG FD Cost             : 732.0 Rs
+
+node-shell [37.3.13.64] $ get_3p_dcu_bundle
+Date & time                   : 2033-12-01 00:10:16
+Meter Serial Number           : 200000
+Prepaid Bill Type             : kWh
+Firmware version              : 9001
+Hardware version              : unknown
+R-Ph Avg Voltage              : 251.68 V
+Y-Ph Avg Voltage              : 251.7 V
+B-Ph Avg Voltage              : 251.7 V
+R-Ph Avg Current              : 0.07 A
+Y-Ph Avg Current              : 0.06 A
+B-Ph Avg Current              : 0.06 A
+Neutral Avg current           : 0.0 A
+R-Ph Avg PF                   : 0.99
+Y-Ph Avg PF                   : 0.99
+B-Ph Avg PF                   : 0.99
+Total Avg PF                  : 0.99
+Frequency                     : 50.02 Hz
+Active Power                  : 0.05 kW
+Apparent Power                : 0.05 kVA
+Reactive Power                : 0.0 kVAr
+Cumm Active Energy            : 37.5 kWh
+Cumm Apparent Energy          : 38.48 kVAh
+Cumm Reactive Energy          : 0.0 kVArh
+Tampers Count                 : 0
+Live Tampers                  : []
+No Of Current Related Events  : 0
+No Of Power Related Events    : 0
+No Of Others Related Events   : 0
+No Of Voltage Related Events  : 0
+Relay State                   : AUTO_CONTROL_ON
+Switch Off Reason             : NULL
+Activated Tariff Group        : EG Tariff Activated
+Prepaid Status                : Prepaid Activated
+Account Status                : ACC_NO_BALANCE_FRIENDLY_HOURS
+Credits Left                  : -1492.4 Rs
+Total Net Recharge            : 0.0 Rs
+Current Net Recharge          : 0.0 Rs
+DG Energy Consumed            : 0.0 kWh
+EG Energy Consumed            : 0.02 kWh
+DG Energy Deducted Amount     : 0.0 Rs
+EG Energy Deducted Amount     : 0.4 Rs
+Current Running Price         : 20.0 Rs
+Cummulative Total FD Cost     : 612.0 Rs
+node-shell [37.3.13.64] $ get_time
+2033-12-01 00:10:16
+node-shell [37.3.13.64] $ get_time
+2033-12-01 00:10:16
+node-shell [37.3.13.64] $ get_prepaid_info
+Prepaid Mode                       : Enabled
+Prepaid Billing Type               : kWh
+Change Prepaid Mode Time Stamp     : 2021-11-15 00:08:26
+Account balance                    : -2572.4 Rs
+Energy at start of month           : 37.5 kWh
+Time Stamp Of Last Prepaid Billing : 2023-12-01 00:00:00
+New Tariff Activation Time Stamp   : 2022-01-30 00:25:41
+Next Tariff To Activate            : 1
+Activated Tariff Group Number      : EG Tariff
+Net Positive Recharge              : 0.0 Rs
+Net Negative Recharge              : 0.0 Rs
+Net Recharge                       : 0.0 Rs
+Current Account Balance            : -2572.4 Rs
+Current FD Cost                    : 0.0 Rs
+Current Energy Cost                : 0.0 Rs
+Status                             : ACC_NO_BALANCE_FRIENDLY_HOURS
+Current Positive Recharge          : 0.0 Rs
+Current Negative Recharge          : 0.0 Rs
+EG Consumption Charge              : 0.4 Rs
+DG Consumption Charge              : 0.0 Rs
+EG Energy Consumed                 : 0.02 kWh
+DG Energy Consumed                 : 0.0 kWh
+Current Net Recharge               : 0.0 Rs
+Cummulative EG FD Cost             : 732.0 Rs
+
+node-shell [37.3.13.64] $ set_eg_tariff_params:1,0,0,0,0,10,10,0,50,[1000,0,0,0,0,0],[2000,2500,3000,3500,4000,4500],[1,2,3,4,5]
+
+
+Fixed Deduction Prices             : [1000, 0, 0, 0, 0, 0] Paisa
+Fixed Deduction Type               : 1
+Fixed Deduction Telescopic Flag    : 0
+Slab Prices                        : [2000, 2500, 3000, 3500, 4000, 4500] Paisa
+Slab Energies                      : [1, 2, 3, 4, 5] KWh
+Monthly Minimum Charge             : 50 Rs
+Friendly Hours                     : 0
+MMC Application                    : 0
+Alert limit                        : 10
+Emergency Credits                  : 10
+Topup limit                        : 0
+
+
+
+ok
+node-shell [37.3.13.64] $ get_prepaid_info
+Prepaid Mode                       : Enabled
+Prepaid Billing Type               : kWh
+Change Prepaid Mode Time Stamp     : 2021-11-15 00:08:26
+Account balance                    : -2572.4 Rs
+Energy at start of month           : 37.5 kWh
+Time Stamp Of Last Prepaid Billing : 2033-12-01 00:10:16
+New Tariff Activation Time Stamp   : 2033-12-01 00:10:16
+Next Tariff To Activate            : 1
+Activated Tariff Group Number      : EG Tariff
+Net Positive Recharge              : 0.0 Rs
+Net Negative Recharge              : 0.0 Rs
+Net Recharge                       : 0.0 Rs
+Current Account Balance            : -2572.4 Rs
+Current FD Cost                    : 0.0 Rs
+Current Energy Cost                : 0.0 Rs
+Status                             : ACC_NO_BALANCE
+Current Positive Recharge          : 0.0 Rs
+Current Negative Recharge          : 0.0 Rs
+EG Consumption Charge              : 0.4 Rs
+DG Consumption Charge              : 0.0 Rs
+EG Energy Consumed                 : 0.02 kWh
+DG Energy Consumed                 : 0.0 kWh
+Current Net Recharge               : 0.0 Rs
+Cummulative EG FD Cost             : 732.0 Rs
+
+node-shell [37.3.13.64] $ get_3p_dcu_bundle
+Date & time                   : 2033-12-01 00:23:42
+Meter Serial Number           : 200000
+Prepaid Bill Type             : kWh
+Firmware version              : 9001
+Hardware version              : unknown
+R-Ph Avg Voltage              : 251.46 V
+Y-Ph Avg Voltage              : 251.48 V
+B-Ph Avg Voltage              : 251.49 V
+R-Ph Avg Current              : 0.07 A
+Y-Ph Avg Current              : 0.06 A
+B-Ph Avg Current              : 0.06 A
+Neutral Avg current           : 0.0 A
+R-Ph Avg PF                   : 0.99
+Y-Ph Avg PF                   : 0.99
+B-Ph Avg PF                   : 0.99
+Total Avg PF                  : 0.99
+Frequency                     : 50.01 Hz
+Active Power                  : 0.05 kW
+Apparent Power                : 0.05 kVA
+Reactive Power                : 0.0 kVAr
+Cumm Active Energy            : 37.51 kWh
+Cumm Apparent Energy          : 38.5 kVAh
+Cumm Reactive Energy          : 0.0 kVArh
+Tampers Count                 : 0
+Live Tampers                  : []
+No Of Current Related Events  : 0
+No Of Power Related Events    : 0
+No Of Others Related Events   : 0
+No Of Voltage Related Events  : 0
+Relay State                   : AUTO_CONTROL_OFF
+Switch Off Reason             : SWOFF_ACCNT_EMPTY
+Activated Tariff Group        : EG Tariff Activated
+Prepaid Status                : Prepaid Activated
+Account Status                : ACC_NO_BALANCE
+Credits Left                  : -2572.6 Rs
+Total Net Recharge            : 0.0 Rs
+Current Net Recharge          : 0.0 Rs
+DG Energy Consumed            : 0.0 kWh
+EG Energy Consumed            : 0.03 kWh
+DG Energy Deducted Amount     : 0.0 Rs
+EG Energy Deducted Amount     : 0.6 Rs
+Current Running Price         : 20.0 Rs
+Cummulative Total FD Cost     : 732.0 Rs
+node-shell [37.3.13.64] $
+node-shell [37.3.13.64] $ get_prepaid_info
+Prepaid Mode                       : Enabled
+Prepaid Billing Type               : kWh
+Change Prepaid Mode Time Stamp     : 2021-11-15 00:08:26
+Account balance                    : -2572.4 Rs
+Energy at start of month           : 37.5 kWh
+Time Stamp Of Last Prepaid Billing : 2033-12-01 00:10:16
+New Tariff Activation Time Stamp   : 2033-12-01 00:10:16
+Next Tariff To Activate            : 1
+Activated Tariff Group Number      : EG Tariff
+Net Positive Recharge              : 0.0 Rs
+Net Negative Recharge              : 0.0 Rs
+Net Recharge                       : 0.0 Rs
+Current Account Balance            : -2572.6 Rs
+Current FD Cost                    : 0.0 Rs
+Current Energy Cost                : 0.2 Rs
+Status                             : ACC_NO_BALANCE
+Current Positive Recharge          : 0.0 Rs
+Current Negative Recharge          : 0.0 Rs
+EG Consumption Charge              : 0.6 Rs
+DG Consumption Charge              : 0.0 Rs
+EG Energy Consumed                 : 0.03 kWh
+DG Energy Consumed                 : 0.0 kWh
+Current Net Recharge               : 0.0 Rs
+Cummulative EG FD Cost             : 732.0 Rs
+
+node-shell [37.3.13.64] $ get_prepaid_info
+Prepaid Mode                       : Enabled
+Prepaid Billing Type               : kWh
+Change Prepaid Mode Time Stamp     : 2021-11-15 00:08:26
+Account balance                    : -2572.4 Rs
+Energy at start of month           : 37.5 kWh
+Time Stamp Of Last Prepaid Billing : 2033-12-01 00:10:16
+New Tariff Activation Time Stamp   : 2033-12-01 00:10:16
+Next Tariff To Activate            : 1
+Activated Tariff Group Number      : EG Tariff
+Net Positive Recharge              : 0.0 Rs
+Net Negative Recharge              : 0.0 Rs
+Net Recharge                       : 0.0 Rs
+Current Account Balance            : -2572.6 Rs
+Current FD Cost                    : 0.0 Rs
+Current Energy Cost                : 0.2 Rs
+Status                             : ACC_NO_BALANCE
+Current Positive Recharge          : 0.0 Rs
+Current Negative Recharge          : 0.0 Rs
+EG Consumption Charge              : 0.6 Rs
+DG Consumption Charge              : 0.0 Rs
+EG Energy Consumed                 : 0.03 kWh
+DG Energy Consumed                 : 0.0 kWh
+Current Net Recharge               : 0.0 Rs
+Cummulative EG FD Cost             : 732.0 Rs
+
+node-shell [37.3.13.64] $ get_3p_dcu_bundle
+Date & time                   : 2033-12-01 00:24:29
+Meter Serial Number           : 200000
+Prepaid Bill Type             : kWh
+Firmware version              : 9001
+Hardware version              : unknown
+R-Ph Avg Voltage              : 251.57 V
+Y-Ph Avg Voltage              : 251.58 V
+B-Ph Avg Voltage              : 251.59 V
+R-Ph Avg Current              : 0.07 A
+Y-Ph Avg Current              : 0.06 A
+B-Ph Avg Current              : 0.06 A
+Neutral Avg current           : 0.0 A
+R-Ph Avg PF                   : 0.99
+Y-Ph Avg PF                   : 0.99
+B-Ph Avg PF                   : 0.99
+Total Avg PF                  : 0.99
+Frequency                     : 49.99 Hz
+Active Power                  : 0.05 kW
+Apparent Power                : 0.05 kVA
+Reactive Power                : 0.0 kVAr
+Cumm Active Energy            : 37.51 kWh
+Cumm Apparent Energy          : 38.5 kVAh
+Cumm Reactive Energy          : 0.0 kVArh
+Tampers Count                 : 0
+Live Tampers                  : []
+No Of Current Related Events  : 0
+No Of Power Related Events    : 0
+No Of Others Related Events   : 0
+No Of Voltage Related Events  : 0
+Relay State                   : AUTO_CONTROL_OFF
+Switch Off Reason             : SWOFF_ACCNT_EMPTY
+Activated Tariff Group        : EG Tariff Activated
+Prepaid Status                : Prepaid Activated
+Account Status                : ACC_NO_BALANCE
+Credits Left                  : -2572.6 Rs
+Total Net Recharge            : 0.0 Rs
+Current Net Recharge          : 0.0 Rs
+DG Energy Consumed            : 0.0 kWh
+EG Energy Consumed            : 0.03 kWh
+DG Energy Deducted Amount     : 0.0 Rs
+EG Energy Deducted Amount     : 0.6 Rs
+Current Running Price         : 20.0 Rs
+Cummulative Total FD Cost     : 732.0 Rs
+node-shell [37.3.13.64] $ rel
+relay_auto_control   relay_manual_control relay_state
+node-shell [37.3.13.64] $ relay_state
+AUTO_CONTROL_OFF
+node-shell [37.3.13.64] $
+node-shell [37.3.13.64] $ get
+get_3p_dcu_bundle                 get_cumulative_tamper_count       get_master_credits                get_phase_current
+get_3p_metering_data              get_current_active_MD             get_meter_serial_no               get_pos_recharge
+get_3p_metering_data2             get_current_apparent_MD           get_metering_data                 get_power_event_logs
+get_3p_relay_status               get_current_reactive_MD           get_metering_mode                 get_power_failure_count
+get_MD_LCD_display                get_daily_load_profile_by_index   get_metering_record_by_index      get_power_failure_duration
+get_MD_avg_period                 get_dd_params                     get_metering_record_interval      get_power_limit
+get_accounting_state              get_dg_phase_type                 get_metering_samples_by_index     get_power_limit_off_time
+get_accurate_credits              get_dg_power_limit                get_nameplate                     get_power_limit_on_time
+get_active_energy_history         get_dg_tariff_group_info          get_neg_recharge                  get_power_limit_params
+get_active_energy_offset          get_dlog_interval                 get_net_account                   get_prepaid_billing_type
+get_active_fd_params              get_dlog_params                   get_net_recharge                  get_prepaid_info
+get_address                       get_eg_tariff_group_info          get_network                       get_price
+get_alarm_events                  get_energy_consumed_today         get_neutral_current               get_reactive_energy_offset
+get_apparent_energy_history       get_energy_limit                  get_newest_block_load_profile     get_reactive_lag_energy_history
+get_apparent_energy_offset        get_event_ptime                   get_newest_daily_load_profile     get_reactive_lead_energy_history
+get_assign_deassign_logs_by_index get_event_record_by_index         get_newest_dlog                   get_ref_time
+get_battery_logs                  get_ext_display_version           get_newest_event_record           get_relay_status
+get_billing_by_index              get_ext_version                   get_newest_log                    get_rf_power
+get_billing_data_by_index         get_fd_update_ts                  get_nm_control_status             get_slab_update_ts
+get_billing_date                  get_fixed_billing_status          get_num_assign_deassign_logs      get_solarOffset
+get_billing_info                  get_flash_erase_sector            get_num_block_load_profile        get_solarPosition
+get_billing_power_on_time         get_flash_read                    get_num_daily_load_profile        get_solarRiseTime
+get_billing_timestamp             get_friendly_holidays             get_num_dlog                      get_solarSetTime
+get_billing_tod_by_index          get_friendly_weekday              get_num_event_record              get_syncstream_bundle
+get_block_load_profile_by_index   get_fw_packet_status              get_num_fw_packets                get_syncstream_interval
+get_block_load_profile_by_index1  get_health_status                 get_num_logs                      get_system_power_factor
+get_block_load_profile_interval   get_hw_version                    get_num_metering_record           get_tamper_logger_period
+get_block_load_profile_params     get_instantaneous_active_MD       get_num_metering_samples_record   get_tamper_record
+get_bootloader_logs               get_instantaneous_apparent_MD     get_num_tamper_logs               get_time
+get_calib_led2                    get_instantaneous_reactive_MD     get_oldest_block_load_profile     get_time_left
+get_calib_status                  get_ipv6_address                  get_oldest_daily_load_profile     get_time_since_unlock
+get_channel                       get_last_poweroff_time            get_oldest_dlog                   get_timeformat
+get_credit_limit                  get_last_unlock_timestamp         get_oldest_event_record           get_tod_params
+get_credits                       get_live_display_version          get_oldest_log                    get_tod_power_limit
+get_cumulative_billing_count      get_live_tampers                  get_past_active_MD                get_undervoltage_threshold
+get_cumulative_power_on_time      get_live_version                  get_past_apparent_MD              get_unlock_validity
+get_cumulative_programming_count  get_lockdown_period               get_past_reactive_MD
+node-shell [37.3.13.64] $ get_eg_tariff_group_info
+Fixed Deduction Prices             : [1000, 0, 0, 0, 0, 0] Paisa
+Fixed Deduction Type               : monthly
+Fixed Deduction Telescopic Flag    : 0
+Slab Prices                        : [2000, 2500, 3000, 3500, 4000, 4500] Paisa
+Slab Energies                      : [1, 2, 3, 4, 5] KWh
+Monthly Minimum Charge             : 50 Rs
+Friendly Hours                     : 0 , 0
+MMC Application                    : 0
+Alert limit                        : 10 *10 Rs
+Emergency Credits                  : 10 *10 Rs
+Topup limit                        : 0 *1000 Rs
+
+node-shell [37.3.13.64] $

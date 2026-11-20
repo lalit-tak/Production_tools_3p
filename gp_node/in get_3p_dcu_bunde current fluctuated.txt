@@ -1,0 +1,1104 @@
+Cummulative Total FD Cost     : 840.0 Rs
+node-shell [255.255.255.255] $
+node-shell [255.255.255.255] $ get_3p_dcu_bundle
+Date & time                   : 2027-09-03 17:55:25
+Meter Serial Number           : 200000
+Prepaid Bill Type             : kVAh
+Firmware version              : 9002
+Hardware version              : unknown
+R-Ph Avg Voltage              : 242.53 V
+Y-Ph Avg Voltage              : 242.54 V
+B-Ph Avg Voltage              : 242.88 V
+R-Ph Avg Current              : 7.36 A
+Y-Ph Avg Current              : 7.37 A
+B-Ph Avg Current              : 0.0 A
+Neutral Avg current           : 0.0 A
+R-Ph Avg PF                   : 0.99
+Y-Ph Avg PF                   : 0.99
+B-Ph Avg PF                   : 0.0
+Total Avg PF                  : 0.99
+Frequency                     : 50.05 Hz
+Active Power                  : 28.8 kW
+Apparent Power                : 28.8 kVA
+Reactive Power                : 0.0 kVAr
+Cumm Active Energy            : 250.0 kWh
+Cumm Apparent Energy          : 251.0 kVAh
+Cumm Reactive Energy          : 0.0 kVArh
+Tampers Count                 : 0
+Live Tampers                  : []
+No Of Current Related Events  : 0
+No Of Power Related Events    : 0
+No Of Others Related Events   : 0
+No Of Voltage Related Events  : 0
+Relay State                   : AUTO_CONTROL_ON
+Switch Off Reason             : NULL
+Activated Tariff Group        : EG Tariff Activated
+Prepaid Status                : Prepaid Activated
+Account Status                : ACC_ENOUGH_BALANCE
+Credits Left                  : 804.53 Rs
+Total Net Recharge            : 8300.0 Rs
+Current Net Recharge          : 8300.0 Rs
+DG Energy Consumed            : 0.12 kVAh
+EG Energy Consumed            : 64.39 kVAh
+DG Energy Deducted Amount     : 0.12 Rs
+EG Energy Deducted Amount     : 2622.6 Rs
+Current Running Price         : 45.0 Rs
+Cummulative Total FD Cost     : 840.0 Rs
+node-shell [255.255.255.255] $ get_3p_dcu_bundle
+Date & time                   : 2027-09-03 17:55:27
+Meter Serial Number           : 200000
+Prepaid Bill Type             : kVAh
+Firmware version              : 9002
+Hardware version              : unknown
+R-Ph Avg Voltage              : 242.53 V
+Y-Ph Avg Voltage              : 242.54 V
+B-Ph Avg Voltage              : 242.88 V
+R-Ph Avg Current              : 7.36 A
+Y-Ph Avg Current              : 7.37 A
+B-Ph Avg Current              : 0.0 A
+Neutral Avg current           : 0.0 A
+R-Ph Avg PF                   : 0.99
+Y-Ph Avg PF                   : 0.99
+B-Ph Avg PF                   : 0.0
+Total Avg PF                  : 0.99
+Frequency                     : 50.05 Hz
+Active Power                  : 28.8 kW
+Apparent Power                : 28.8 kVA
+Reactive Power                : 0.0 kVAr
+Cumm Active Energy            : 250.01 kWh
+Cumm Apparent Energy          : 251.01 kVAh
+Cumm Reactive Energy          : 0.0 kVArh
+Tampers Count                 : 0
+Live Tampers                  : []
+No Of Current Related Events  : 0
+No Of Power Related Events    : 0
+No Of Others Related Events   : 0
+No Of Voltage Related Events  : 0
+Relay State                   : AUTO_CONTROL_ON
+Switch Off Reason             : NULL
+Activated Tariff Group        : EG Tariff Activated
+Prepaid Status                : Prepaid Activated
+Account Status                : ACC_ENOUGH_BALANCE
+Credits Left                  : 804.53 Rs
+Total Net Recharge            : 8300.0 Rs
+Current Net Recharge          : 8300.0 Rs
+DG Energy Consumed            : 0.12 kVAh
+EG Energy Consumed            : 64.39 kVAh
+DG Energy Deducted Amount     : 0.12 Rs
+EG Energy Deducted Amount     : 2622.6 Rs
+Current Running Price         : 45.0 Rs
+Cummulative Total FD Cost     : 840.0 Rs
+node-shell [255.255.255.255] $ get_3p_dcu_bundle
+Date & time                   : 2027-09-03 17:55:33
+Meter Serial Number           : 200000
+Prepaid Bill Type             : kVAh
+Firmware version              : 9002
+Hardware version              : unknown
+R-Ph Avg Voltage              : 240.0 V
+Y-Ph Avg Voltage              : 240.0 V
+B-Ph Avg Voltage              : 243.03 V
+R-Ph Avg Current              : 60.0 A
+Y-Ph Avg Current              : 60.0 A
+B-Ph Avg Current              : 0.0 A
+Neutral Avg current           : 0.0 A
+R-Ph Avg PF                   : 1.0
+Y-Ph Avg PF                   : 1.0
+B-Ph Avg PF                   : 0.0
+Total Avg PF                  : 1.0
+Frequency                     : 50.06 Hz
+Active Power                  : 28.8 kW
+Apparent Power                : 28.8 kVA
+Reactive Power                : 0.0 kVAr
+Cumm Active Energy            : 250.05 kWh
+Cumm Apparent Energy          : 251.05 kVAh
+Cumm Reactive Energy          : 0.0 kVArh
+Tampers Count                 : 0
+Live Tampers                  : []
+No Of Current Related Events  : 0
+No Of Power Related Events    : 0
+No Of Others Related Events   : 0
+No Of Voltage Related Events  : 0
+Relay State                   : AUTO_CONTROL_ON
+Switch Off Reason             : NULL
+Activated Tariff Group        : EG Tariff Activated
+Prepaid Status                : Prepaid Activated
+Account Status                : ACC_ENOUGH_BALANCE
+Credits Left                  : 802.73 Rs
+Total Net Recharge            : 8300.0 Rs
+Current Net Recharge          : 8300.0 Rs
+DG Energy Consumed            : 0.12 kVAh
+EG Energy Consumed            : 64.43 kVAh
+DG Energy Deducted Amount     : 0.12 Rs
+EG Energy Deducted Amount     : 2624.4 Rs
+Current Running Price         : 45.0 Rs
+Cummulative Total FD Cost     : 840.0 Rs
+node-shell [255.255.255.255] $ get_3p_dcu_bundle
+Date & time                   : 2027-09-03 17:55:35
+Meter Serial Number           : 200000
+Prepaid Bill Type             : kVAh
+Firmware version              : 9002
+Hardware version              : unknown
+R-Ph Avg Voltage              : 240.0 V
+Y-Ph Avg Voltage              : 240.0 V
+B-Ph Avg Voltage              : 243.06 V
+R-Ph Avg Current              : 60.0 A
+Y-Ph Avg Current              : 60.0 A
+B-Ph Avg Current              : 0.0 A
+Neutral Avg current           : 0.0 A
+R-Ph Avg PF                   : 1.0
+Y-Ph Avg PF                   : 1.0
+B-Ph Avg PF                   : 0.0
+Total Avg PF                  : 1.0
+Frequency                     : 50.05 Hz
+Active Power                  : 28.8 kW
+Apparent Power                : 28.8 kVA
+Reactive Power                : 0.0 kVAr
+Cumm Active Energy            : 250.07 kWh
+Cumm Apparent Energy          : 251.07 kVAh
+Cumm Reactive Energy          : 0.0 kVArh
+Tampers Count                 : 0
+Live Tampers                  : []
+No Of Current Related Events  : 0
+No Of Power Related Events    : 0
+No Of Others Related Events   : 0
+No Of Voltage Related Events  : 0
+Relay State                   : AUTO_CONTROL_ON
+Switch Off Reason             : NULL
+Activated Tariff Group        : EG Tariff Activated
+Prepaid Status                : Prepaid Activated
+Account Status                : ACC_ENOUGH_BALANCE
+Credits Left                  : 801.38 Rs
+Total Net Recharge            : 8300.0 Rs
+Current Net Recharge          : 8300.0 Rs
+DG Energy Consumed            : 0.12 kVAh
+EG Energy Consumed            : 64.46 kVAh
+DG Energy Deducted Amount     : 0.12 Rs
+EG Energy Deducted Amount     : 2625.75 Rs
+Current Running Price         : 45.0 Rs
+Cummulative Total FD Cost     : 840.0 Rs
+node-shell [255.255.255.255] $ get_3p_dcu_bundle
+Date & time                   : 2027-09-03 17:55:39
+Meter Serial Number           : 200000
+Prepaid Bill Type             : kVAh
+Firmware version              : 9002
+Hardware version              : unknown
+R-Ph Avg Voltage              : 240.0 V
+Y-Ph Avg Voltage              : 240.0 V
+B-Ph Avg Voltage              : 243.06 V
+R-Ph Avg Current              : 60.0 A
+Y-Ph Avg Current              : 60.0 A
+B-Ph Avg Current              : 0.0 A
+Neutral Avg current           : 0.0 A
+R-Ph Avg PF                   : 1.0
+Y-Ph Avg PF                   : 1.0
+B-Ph Avg PF                   : 0.0
+Total Avg PF                  : 1.0
+Frequency                     : 50.05 Hz
+Active Power                  : 28.8 kW
+Apparent Power                : 28.8 kVA
+Reactive Power                : 0.0 kVAr
+Cumm Active Energy            : 250.12 kWh
+Cumm Apparent Energy          : 251.12 kVAh
+Cumm Reactive Energy          : 0.0 kVArh
+Tampers Count                 : 0
+Live Tampers                  : []
+No Of Current Related Events  : 0
+No Of Power Related Events    : 0
+No Of Others Related Events   : 0
+No Of Voltage Related Events  : 0
+Relay State                   : AUTO_CONTROL_ON
+Switch Off Reason             : NULL
+Activated Tariff Group        : EG Tariff Activated
+Prepaid Status                : Prepaid Activated
+Account Status                : ACC_ENOUGH_BALANCE
+Credits Left                  : 801.38 Rs
+Total Net Recharge            : 8300.0 Rs
+Current Net Recharge          : 8300.0 Rs
+DG Energy Consumed            : 0.12 kVAh
+EG Energy Consumed            : 64.46 kVAh
+DG Energy Deducted Amount     : 0.12 Rs
+EG Energy Deducted Amount     : 2625.75 Rs
+Current Running Price         : 45.0 Rs
+Cummulative Total FD Cost     : 840.0 Rs
+node-shell [255.255.255.255] $ get_3p_dcu_bundle
+Date & time                   : 2027-09-03 17:55:41
+Meter Serial Number           : 200000
+Prepaid Bill Type             : kVAh
+Firmware version              : 9002
+Hardware version              : unknown
+R-Ph Avg Voltage              : 240.0 V
+Y-Ph Avg Voltage              : 240.0 V
+B-Ph Avg Voltage              : 243.15 V
+R-Ph Avg Current              : 60.0 A
+Y-Ph Avg Current              : 60.0 A
+B-Ph Avg Current              : 0.0 A
+Neutral Avg current           : 0.0 A
+R-Ph Avg PF                   : 1.0
+Y-Ph Avg PF                   : 1.0
+B-Ph Avg PF                   : 0.0
+Total Avg PF                  : 1.0
+Frequency                     : 50.05 Hz
+Active Power                  : 28.8 kW
+Apparent Power                : 28.8 kVA
+Reactive Power                : 0.0 kVAr
+Cumm Active Energy            : 250.12 kWh
+Cumm Apparent Energy          : 251.12 kVAh
+Cumm Reactive Energy          : 0.0 kVArh
+Tampers Count                 : 0
+Live Tampers                  : []
+No Of Current Related Events  : 0
+No Of Power Related Events    : 0
+No Of Others Related Events   : 0
+No Of Voltage Related Events  : 0
+Relay State                   : AUTO_CONTROL_ON
+Switch Off Reason             : NULL
+Activated Tariff Group        : EG Tariff Activated
+Prepaid Status                : Prepaid Activated
+Account Status                : ACC_ENOUGH_BALANCE
+Credits Left                  : 799.13 Rs
+Total Net Recharge            : 8300.0 Rs
+Current Net Recharge          : 8300.0 Rs
+DG Energy Consumed            : 0.12 kVAh
+EG Energy Consumed            : 64.51 kVAh
+DG Energy Deducted Amount     : 0.12 Rs
+EG Energy Deducted Amount     : 2628.0 Rs
+Current Running Price         : 45.0 Rs
+Cummulative Total FD Cost     : 840.0 Rs
+node-shell [255.255.255.255] $
+node-shell [255.255.255.255] $ get_3p
+get_3p_dcu_bundle     get_3p_metering_data  get_3p_metering_data2 get_3p_relay_status
+node-shell [255.255.255.255] $ get_3p_me
+get_3p_metering_data  get_3p_metering_data2
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:56:28
+Frequency                  : 50.04 Hz
+R-Voltage                  : 240.0 V
+Y-Voltage                  : 240.0 V
+B-Voltage                  : 243.33 V
+R-Current                  : 60.0 A
+Y-Current                  : 60.0 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 28.8 KW
+Apparent Power             : 28.8 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 1.0
+Y-PowerFactor              : 1.0
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 1.0
+Active Energy Import       : 250.52 KWh
+Active Energy Export       : 251.52 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+
+SimpletermError
+error code: TAP_ERROR
+tap error: TIMEOUT_START_BYTE
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:56:36
+Frequency                  : 50.05 Hz
+R-Voltage                  : 240.0 V
+Y-Voltage                  : 240.0 V
+B-Voltage                  : 243.48 V
+R-Current                  : 60.0 A
+Y-Current                  : 60.0 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 28.8 KW
+Apparent Power             : 28.8 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 1.0
+Y-PowerFactor              : 1.0
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 1.0
+Active Energy Import       : 250.58 KWh
+Active Energy Export       : 251.58 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:56:38
+Frequency                  : 50.05 Hz
+R-Voltage                  : 240.0 V
+Y-Voltage                  : 240.0 V
+B-Voltage                  : 243.56 V
+R-Current                  : 60.0 A
+Y-Current                  : 60.0 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 28.8 KW
+Apparent Power             : 28.8 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 1.0
+Y-PowerFactor              : 1.0
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 1.0
+Active Energy Import       : 250.58 KWh
+Active Energy Export       : 251.58 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:56:38
+Frequency                  : 50.05 Hz
+R-Voltage                  : 240.0 V
+Y-Voltage                  : 240.0 V
+B-Voltage                  : 243.56 V
+R-Current                  : 60.0 A
+Y-Current                  : 60.0 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 28.8 KW
+Apparent Power             : 28.8 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 1.0
+Y-PowerFactor              : 1.0
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 1.0
+Active Energy Import       : 250.59 KWh
+Active Energy Export       : 251.59 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:56:40
+Frequency                  : 50.04 Hz
+R-Voltage                  : 240.0 V
+Y-Voltage                  : 240.0 V
+B-Voltage                  : 243.51 V
+R-Current                  : 60.0 A
+Y-Current                  : 60.0 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 28.8 KW
+Apparent Power             : 28.8 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 1.0
+Y-PowerFactor              : 1.0
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 1.0
+Active Energy Import       : 250.59 KWh
+Active Energy Export       : 251.59 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:56:42
+Frequency                  : 50.04 Hz
+R-Voltage                  : 240.0 V
+Y-Voltage                  : 240.0 V
+B-Voltage                  : 243.48 V
+R-Current                  : 60.0 A
+Y-Current                  : 60.0 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 28.8 KW
+Apparent Power             : 28.8 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 1.0
+Y-PowerFactor              : 1.0
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 1.0
+Active Energy Import       : 250.62 KWh
+Active Energy Export       : 251.62 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_dcu_bundle
+
+SimpletermError
+error code: TAP_ERROR
+tap error: TIMEOUT_START_BYTE
+
+node-shell [255.255.255.255] $
+node-shell [255.255.255.255] $
+node-shell [255.255.255.255] $
+node-shell [255.255.255.255] $ get_3p_dcu_bundle
+Date & time                   : 2027-09-03 17:56:56
+Meter Serial Number           : 200000
+Prepaid Bill Type             : kVAh
+Firmware version              : 9002
+Hardware version              : unknown
+R-Ph Avg Voltage              : 240.29 V
+Y-Ph Avg Voltage              : 240.29 V
+B-Ph Avg Voltage              : 243.31 V
+R-Ph Avg Current              : 55.06 A
+Y-Ph Avg Current              : 55.06 A
+B-Ph Avg Current              : 0.0 A
+Neutral Avg current           : 0.0 A
+R-Ph Avg PF                   : 0.99
+Y-Ph Avg PF                   : 0.99
+B-Ph Avg PF                   : 0.0
+Total Avg PF                  : 0.99
+Frequency                     : 50.03 Hz
+Active Power                  : 0.38 kW
+Apparent Power                : 0.38 kVA
+Reactive Power                : 0.0 kVAr
+Cumm Active Energy            : 250.72 kWh
+Cumm Apparent Energy          : 251.72 kVAh
+Cumm Reactive Energy          : 0.0 kVArh
+Tampers Count                 : 0
+Live Tampers                  : []
+No Of Current Related Events  : 0
+No Of Power Related Events    : 0
+No Of Others Related Events   : 0
+No Of Voltage Related Events  : 0
+Relay State                   : AUTO_CONTROL_ON
+Switch Off Reason             : NULL
+Activated Tariff Group        : EG Tariff Activated
+Prepaid Status                : Prepaid Activated
+Account Status                : ACC_ENOUGH_BALANCE
+Credits Left                  : 772.13 Rs
+Total Net Recharge            : 8300.0 Rs
+Current Net Recharge          : 8300.0 Rs
+DG Energy Consumed            : 0.12 kVAh
+EG Energy Consumed            : 65.11 kVAh
+DG Energy Deducted Amount     : 0.12 Rs
+EG Energy Deducted Amount     : 2655.0 Rs
+Current Running Price         : 45.0 Rs
+Cummulative Total FD Cost     : 840.0 Rs
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:56:57
+Frequency                  : 50.03 Hz
+R-Voltage                  : 243.58 V
+Y-Voltage                  : 243.6 V
+B-Voltage                  : 243.6 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.388 KW
+Apparent Power             : 0.388 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:03
+Frequency                  : 50.03 Hz
+R-Voltage                  : 243.42 V
+Y-Voltage                  : 243.44 V
+B-Voltage                  : 243.45 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.388 KW
+Apparent Power             : 0.388 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:05
+Frequency                  : 50.03 Hz
+R-Voltage                  : 243.5 V
+Y-Voltage                  : 243.51 V
+B-Voltage                  : 243.52 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.388 KW
+Apparent Power             : 0.388 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:07
+Frequency                  : 50.03 Hz
+R-Voltage                  : 243.5 V
+Y-Voltage                  : 243.53 V
+B-Voltage                  : 243.54 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.388 KW
+Apparent Power             : 0.388 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:09
+Frequency                  : 50.03 Hz
+R-Voltage                  : 243.59 V
+Y-Voltage                  : 243.61 V
+B-Voltage                  : 243.62 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.388 KW
+Apparent Power             : 0.388 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:09
+Frequency                  : 50.03 Hz
+R-Voltage                  : 243.59 V
+Y-Voltage                  : 243.61 V
+B-Voltage                  : 243.62 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.388 KW
+Apparent Power             : 0.388 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:13
+Frequency                  : 50.03 Hz
+R-Voltage                  : 243.46 V
+Y-Voltage                  : 243.48 V
+B-Voltage                  : 243.48 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.388 KW
+Apparent Power             : 0.388 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:15
+Frequency                  : 50.03 Hz
+R-Voltage                  : 243.59 V
+Y-Voltage                  : 243.6 V
+B-Voltage                  : 243.6 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.388 KW
+Apparent Power             : 0.388 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:17
+Frequency                  : 50.03 Hz
+R-Voltage                  : 243.59 V
+Y-Voltage                  : 243.59 V
+B-Voltage                  : 243.58 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.388 KW
+Apparent Power             : 0.388 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:19
+Frequency                  : 50.04 Hz
+R-Voltage                  : 243.63 V
+Y-Voltage                  : 243.65 V
+B-Voltage                  : 243.66 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.388 KW
+Apparent Power             : 0.388 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:21
+Frequency                  : 50.04 Hz
+R-Voltage                  : 243.62 V
+Y-Voltage                  : 243.63 V
+B-Voltage                  : 243.65 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.388 KW
+Apparent Power             : 0.388 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:23
+Frequency                  : 50.04 Hz
+R-Voltage                  : 243.63 V
+Y-Voltage                  : 243.64 V
+B-Voltage                  : 243.64 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.388 KW
+Apparent Power             : 0.388 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:25
+Frequency                  : 50.04 Hz
+R-Voltage                  : 243.72 V
+Y-Voltage                  : 243.73 V
+B-Voltage                  : 243.74 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.389 KW
+Apparent Power             : 0.388 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:27
+Frequency                  : 50.04 Hz
+R-Voltage                  : 243.69 V
+Y-Voltage                  : 243.71 V
+B-Voltage                  : 243.71 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.388 KW
+Apparent Power             : 0.388 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:29
+Frequency                  : 50.04 Hz
+R-Voltage                  : 243.72 V
+Y-Voltage                  : 243.73 V
+B-Voltage                  : 243.73 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.388 KW
+Apparent Power             : 0.388 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:31
+Frequency                  : 50.05 Hz
+R-Voltage                  : 243.69 V
+Y-Voltage                  : 243.71 V
+B-Voltage                  : 243.73 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.388 KW
+Apparent Power             : 0.388 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:31
+Frequency                  : 50.05 Hz
+R-Voltage                  : 243.69 V
+Y-Voltage                  : 243.71 V
+B-Voltage                  : 243.73 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.388 KW
+Apparent Power             : 0.388 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:33
+Frequency                  : 50.05 Hz
+R-Voltage                  : 243.86 V
+Y-Voltage                  : 243.86 V
+B-Voltage                  : 243.89 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.389 KW
+Apparent Power             : 0.389 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:33
+Frequency                  : 50.05 Hz
+R-Voltage                  : 243.86 V
+Y-Voltage                  : 243.86 V
+B-Voltage                  : 243.89 V
+R-Current                  : 0.79 A
+Y-Current                  : 0.8 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 0.389 KW
+Apparent Power             : 0.389 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 0.99
+Y-PowerFactor              : 0.99
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 0.99
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_metering_data
+Meter Serial Number        : 200000
+Meter Date Time            : 2027-09-03 17:57:35
+Frequency                  : 50.05 Hz
+R-Voltage                  : 240.0 V
+Y-Voltage                  : 240.0 V
+B-Voltage                  : 243.91 V
+R-Current                  : 60.0 A
+Y-Current                  : 1.12 A
+B-Current                  : 0.0 A
+Neutral Current            : 0.0 A
+Active Power               : 28.8 KW
+Apparent Power             : 28.8 KVA
+Reactive Power             : 0.0 KVAr
+R-PowerFactor              : 1.0
+Y-PowerFactor              : 1.0
+B-PowerFactor              : 0.0
+Avg PowerFactor            : 1.0
+Active Energy Import       : 250.72 KWh
+Active Energy Export       : 251.72 KWh
+Apparent Energy Import     : 0.0 KVAh
+Apparent Energy Export     : 0.0 KVAh
+Reactive Energy QI         : 0.0 KVArh
+Reactive Energy QII        : 0.0 KVArh
+Reactive Energy QIII       : 0.0 KVArh
+Reactive Energy QIV        : 0.0 KVArh
+Live Tampers               : ['None']
+
+node-shell [255.255.255.255] $ get_3p_dcu_bundle
+Date & time                   : 2027-09-03 17:57:41
+Meter Serial Number           : 200000
+Prepaid Bill Type             : kVAh
+Firmware version              : 9002
+Hardware version              : unknown
+R-Ph Avg Voltage              : 242.77 V
+Y-Ph Avg Voltage              : 242.78 V
+B-Ph Avg Voltage              : 243.65 V
+R-Ph Avg Current              : 13.94 A
+Y-Ph Avg Current              : 7.41 A
+B-Ph Avg Current              : 0.0 A
+Neutral Avg current           : 0.0 A
+R-Ph Avg PF                   : 0.99
+Y-Ph Avg PF                   : 0.99
+B-Ph Avg PF                   : 0.0
+Total Avg PF                  : 0.99
+Frequency                     : 50.03 Hz
+Active Power                  : 28.8 kW
+Apparent Power                : 28.8 kVA
+Reactive Power                : 0.0 kVAr
+Cumm Active Energy            : 250.78 kWh
+Cumm Apparent Energy          : 251.78 kVAh
+Cumm Reactive Energy          : 0.0 kVArh
+Tampers Count                 : 0
+Live Tampers                  : []
+No Of Current Related Events  : 0
+No Of Power Related Events    : 0
+No Of Others Related Events   : 0
+No Of Voltage Related Events  : 0
+Relay State                   : AUTO_CONTROL_ON
+Switch Off Reason             : NULL
+Activated Tariff Group        : EG Tariff Activated
+Prepaid Status                : Prepaid Activated
+Account Status                : ACC_ENOUGH_BALANCE
+Credits Left                  : 769.88 Rs
+Total Net Recharge            : 8300.0 Rs
+Current Net Recharge          : 8300.0 Rs
+DG Energy Consumed            : 0.12 kVAh
+EG Energy Consumed            : 65.16 kVAh
+DG Energy Deducted Amount     : 0.12 Rs
+EG Energy Deducted Amount     : 2657.25 Rs
+Current Running Price         : 45.0 Rs
+Cummulative Total FD Cost     : 840.0 Rs

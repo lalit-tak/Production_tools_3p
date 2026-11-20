@@ -1,0 +1,27 @@
+<MRI>
+  <MiscSettings>
+    <PortNo>/dev/gp-gateway</PortNo>
+    <BaudRate>9600</BaudRate>
+    <TimeOut>3</TimeOut>
+    <TimeDrift>12</TimeDrift>
+    <SoftwareVersion>102</SoftwareVersion>
+  </MiscSettings>
+  <ThreePhase>
+    <NoLoadCurrentRPhase>20</NoLoadCurrentRPhase>
+    <NoLoadCurrentYPhase>20</NoLoadCurrentYPhase>
+    <NoLoadCurrentBPhase>20</NoLoadCurrentBPhase>
+    <LoadCurrentRPhase>30</LoadCurrentRPhase>
+    <LoadCurrentYPhase>30</LoadCurrentYPhase>
+    <LoadCurrentBPhase>30</LoadCurrentBPhase>
+    <TotalRealEnergy>0</TotalRealEnergy>
+    <TotalApparentEnergy>0</TotalApparentEnergy>
+    <TotalReactiveEnergy>0</TotalReactiveEnergy>
+    <LagOnlyReactiveEnergy>0</LagOnlyReactiveEnergy>
+    <LeadOnlyReactiveEnergy>0</LeadOnlyReactiveEnergy>
+  </ThreePhase>
+  <SinglePhase>
+    <NoLoadCurrent>10</NoLoadCurrent>
+    <LoadCurrent>600</LoadCurrent>
+    <TotalRealEnergy_1p>10</TotalRealEnergy_1p>
+  </SinglePhase>
+</MRI>

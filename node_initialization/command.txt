@@ -1,0 +1,10 @@
+clear_account
+set_power_limit:10000
+set_channel:4
+set_network:9
+set_price:50
+recharge:50
+relay_auto_control
+get_channel
+get_network
+relay_state

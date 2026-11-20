@@ -1,0 +1,16 @@
+maxwell_cal_time:now
+maxwell_cal_time:now
+factory_init_1
+factory_init_2
+@status
+get_time
+get_meter_serial_no
+get_power_limit
+get_address
+get_network
+get_channel
+relay_state
+get_MD_avg_period
+get_num_surveys
+get_live_version
+get_MD_LCD_display
